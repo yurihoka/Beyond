@@ -1,5 +1,5 @@
 ---
-name: 機能追加、バグ、その他
+name: Feature, Bug, Others
 about: Issueテンプレート。内容に応じてタイトルの[]内は変える
 title: "[Feat/Bug/XXXX]"
 labels: ''
