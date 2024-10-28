@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import Input from "./Input";
 
 const meta: Meta<typeof Input> = {
-  title: "common/Input",
+  title: "Common/Input",
   component: Input,
 };
 
