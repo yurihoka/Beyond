@@ -5,17 +5,30 @@ import { parseArgs } from "util";
 const meta: Meta<typeof Form> = {
   title: "Common/Form",
   component: Form,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "サインイン、サインアップコンポーネント",
+      },
+    },
+  },
+  argTypes: {
+    entry: {
+      description: "ボタンに表示させたいテキスト",
+    },
+  },
 };
 
 export default meta;
 
-export const SignInForm = {
+export const SignIn = {
   args: {
-    variant: "Sign in",
+    entry: "signin",
   },
 };
-export const SignUpForm = {
+export const SignUp = {
   args: {
-    variant: "Sign up",
+    entry: "signup",
   },
 };
