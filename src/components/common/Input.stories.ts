@@ -8,7 +8,7 @@ const meta: Meta<typeof Input> = {
   parameters: {
     docs: {
       description: {
-        component: "インプットコンポーネント",
+        component: "ログイン/サインアップフォームのEmail/Password用インプット",
       },
     },
   },

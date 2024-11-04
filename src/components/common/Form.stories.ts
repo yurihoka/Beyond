@@ -9,7 +9,7 @@ const meta: Meta<typeof Form> = {
   parameters: {
     docs: {
       description: {
-        component: "サインイン、サインアップコンポーネント",
+        component: "サインイン、サインアップフォーム",
       },
     },
   },
