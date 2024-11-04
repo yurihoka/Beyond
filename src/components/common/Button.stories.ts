@@ -26,8 +26,17 @@ export const Signin = {
     entry: "signin",
   },
 };
+
 export const Signup = {
   args: {
     entry: "signup",
   },
 };
+
+export const StartWorkout = {
+  args: {
+    entry: "startworkout",
+  },
+};
+
+
