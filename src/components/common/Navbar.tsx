@@ -9,12 +9,12 @@ const Navbar = ({ userEmail }: UserEmailType) => {
     <div>
       <ul className="flex justify-between">
         <li className="mr-3">
-          <a className="text-lime-300 hover:text-lime-500" href="#">
+          <a className="text-gray-500 hover:text-gray-700" href="#">
             HOME
           </a>
         </li>
         <li className="mr-3">
-          <a className="text-lime-300 hover:text-lime-500" href="#">
+          <a className="text-gray-500 hover:text-gray-700" href="#">
             {userEmail}
           </a>
         </li>
