@@ -21,7 +21,7 @@ const meta: Meta<typeof Navbar> = {
 
 export default meta;
 
-export const Email = {
+export const NavigationBar = {
   args: {
     variant: "test@xyz.com",
   },
