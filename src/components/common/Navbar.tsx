@@ -1,7 +1,10 @@
 import React from "react";
-import { InputType } from "storybook/internal/types";
 
-const Navbar = ({ variant }: InputType) => {
+export type UserEmailType = {
+  userEmail: string;
+};
+
+const Navbar = ({ userEmail }: UserEmailType) => {
   return (
     <div>
       <ul className="flex justify-between">
@@ -12,7 +15,7 @@ const Navbar = ({ variant }: InputType) => {
         </li>
         <li className="mr-3">
           <a className="text-lime-300 hover:text-lime-500" href="#">
-            {variant}
+            {userEmail}
           </a>
         </li>
       </ul>

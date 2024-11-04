@@ -13,7 +13,7 @@ const meta: Meta<typeof Navbar> = {
     },
   },
   argTypes: {
-    variant: {
+    userEmail: {
       description: "ナビゲーションバーに表示させたいユーザーのメールアドレス",
     },
   },
@@ -23,6 +23,6 @@ export default meta;
 
 export const NavigationBar = {
   args: {
-    variant: "test@xyz.com",
+    userEmail: "test@xyz.com",
   },
 };
