@@ -1,3 +1,3 @@
 export type ButtonType = {
-  entry: "signin" | "signup" | "startworkout";
+  entry: "signin" | "signup" | "startworkout" | "finishworkout";
 };
