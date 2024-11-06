@@ -8,7 +8,7 @@ const meta: Meta<typeof Button> = {
   parameters: {
     docs: {
       description: {
-        component: "ログイン/サインアップフォーム用ボタン",
+        component: "ログイン/サインアップフォーム、スタートワークアウト用ボタン",
       },
     },
   },
