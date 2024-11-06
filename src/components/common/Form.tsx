@@ -1,17 +1,14 @@
 import React from "react";
 import Input from "./Input";
 import Button from "./Button";
+import { ButtonType } from "./types";
 
-type Props = {
-  variant: "Sign in" | "Sign up";
-};
-
-const Form = ({ variant }: Props) => {
+const Form = ({ entry }: ButtonType) => {
   return (
     <div>
       <Input variant="Email" />
       <Input variant="Password" />
-      <Button variant={variant} />
+      <Button entry={entry} />
     </div>
   );
 };

@@ -1,17 +1,14 @@
 import React from "react";
+import { ButtonType } from "./types";
 
-type Props = {
-  variant: "Sign in" | "Sign up";
-};
-
-const Button = ({ variant }: Props) => {
+const Button = ({ entry }: ButtonType) => {
   let buttonTxt;
 
-  switch (variant) {
-    case "Sign in":
+  switch (entry) {
+    case "signin":
       buttonTxt = "Sign in";
       break;
-    case "Sign up":
+    case "signup":
       buttonTxt = "Sign up";
       break;
   }

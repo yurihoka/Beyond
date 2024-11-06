@@ -4,17 +4,30 @@ import Button from "./Button";
 const meta: Meta<typeof Button> = {
   title: "Common/Button",
   component: Button,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "ログイン/サインアップフォーム用ボタン",
+      },
+    },
+  },
+  argTypes: {
+    entry: {
+      description: "ボタンに表示させたいテキスト",
+    },
+  },
 };
 
 export default meta;
 
 export const Signin = {
   args: {
-    variant: "Sign in",
+    entry: "signin",
   },
 };
 export const Signup = {
   args: {
-    variant: "Sign up",
+    entry: "signup",
   },
 };
