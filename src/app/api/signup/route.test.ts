@@ -3,7 +3,7 @@ import { createMocks } from "node-mocks-http";
 
 import POST from "./route";
 
-describe("API: Login", () => {
+describe("API: Signup", () => {
   describe("サインアップ成功", () => {
     test("", async () => {
       const newUser = { email: "newuser@xyz.com", password: "newuser" };
