@@ -1,9 +1,9 @@
 import { Meta } from "@storybook/react";
-import WeightAndRapField from "./WeightAndRapField";
+import RecordInput from "./RecordInput";
 
-const meta: Meta<typeof WeightAndRapField> = {
-  title: "StartWorkout/WeightAndRapField",
-  component: WeightAndRapField,
+const meta: Meta<typeof RecordInput> = {
+  title: "StartWorkout/RecordInput",
+  component: RecordInput,
   tags: ["autodocs"],
   parameters: {
     docs: {
@@ -13,7 +13,7 @@ const meta: Meta<typeof WeightAndRapField> = {
     },
   },
   argTypes: {
-    setDetails: {
+    field: {
       description: "inputタグに紐付けたい項目名",
     },
   },
@@ -23,12 +23,12 @@ export default meta;
 
 export const Weight = {
   args: {
-    setDetails: "weight",
+    field: "weight",
   },
 };
 
 export const Rep = {
   args: {
-    setDetails: "rap",
+    field: "rap",
   },
 };

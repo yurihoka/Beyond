@@ -1,9 +1,9 @@
 import { Meta } from "@storybook/react";
-import WorkoutRecords from "./WorkoutRecords";
+import WorkoutRecord from "./WorkoutRecord";
 
-const meta: Meta<typeof WorkoutRecords> = {
-  title: "StartWorkout/WorkoutRecords",
-  component: WorkoutRecords,
+const meta: Meta<typeof WorkoutRecord> = {
+  title: "StartWorkout/WorkoutRecord",
+  component: WorkoutRecord,
   tags: ["autodocs"],
   parameters: {
     docs: {
@@ -13,7 +13,7 @@ const meta: Meta<typeof WorkoutRecords> = {
     },
   },
   argTypes: {
-    setCount: {
+    set: {
       description: "エクササイズごとのセット数",
     },
   },
@@ -23,6 +23,6 @@ export default meta;
 
 export const SingleRecord = {
   args: {
-    setCount: 1,
+    set: 1,
   },
 };

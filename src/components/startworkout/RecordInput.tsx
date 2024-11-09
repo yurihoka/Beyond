@@ -1,16 +1,20 @@
 import React from "react";
 
-const WeightAndRapField = ({ setDetails }: { setDetails: string }) => {
+type RecordInputProps = {
+  field: "weight" | "rep";
+};
+
+const RecordInput = ({ field }: RecordInputProps) => {
   return (
     <div>
       <label
-        htmlFor={setDetails}
+        htmlFor={field}
         className="block text-sm font-medium leading-6 text-gray-900"
       ></label>
       <div className="mt-1">
         <input
-          id={setDetails}
-          name={setDetails}
+          id={field}
+          name={field}
           type="number"
           placeholder="0"
           required
@@ -22,4 +26,4 @@ const WeightAndRapField = ({ setDetails }: { setDetails: string }) => {
   );
 };
 
-export default WeightAndRapField;
+export default RecordInput;
