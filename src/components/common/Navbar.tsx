@@ -1,10 +1,10 @@
 import React from "react";
 
-export type UserEmailType = {
+export type NavbarProps = {
   userEmail: string;
 };
 
-const Navbar = ({ userEmail }: UserEmailType) => {
+const Navbar = ({ userEmail }: NavbarProps) => {
   return (
     <div>
       <ul className="flex justify-between">
