@@ -8,7 +8,8 @@ const meta: Meta<typeof Button> = {
   parameters: {
     docs: {
       description: {
-        component: "ログイン/サインアップフォーム、スタートワークアウト用ボタン",
+        component:
+          "ログイン/サインアップフォーム、スタートワークアウト、フィニッシュワークアウト用ボタン",
       },
     },
   },
@@ -39,4 +40,8 @@ export const StartWorkout = {
   },
 };
 
-
+export const FinishWorkout = {
+  args: {
+    entry: "finishworkout",
+  },
+};
