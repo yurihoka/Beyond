@@ -7,7 +7,7 @@ export type NavbarProps = {
 const Navbar = ({ userEmail }: NavbarProps) => {
   return (
     <div>
-      <ul className="flex justify-between">
+      <ul className="flex justify-between bg-gray-200 px-10">
         <li className="mr-3">
           <a className="text-gray-500 hover:text-gray-700" href="#">
             HOME
