@@ -11,6 +11,12 @@ const Button = ({ entry }: ButtonType) => {
     case "signup":
       buttonTxt = "Sign up";
       break;
+    case "startworkout":
+      buttonTxt = "Start Workout";
+      break;
+    case "finishworkout":
+      buttonTxt = "Finish";
+      break;
   }
 
   return (
