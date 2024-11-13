@@ -5,6 +5,7 @@ export type ButtonType = {
     | "startworkout"
     | "finishworkout"
     | "addset"
-    | "addexercises";
+    | "addexercises"
+    | "cancelworkout";
   onClick: () => void;
 };

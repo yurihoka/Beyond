@@ -60,3 +60,10 @@ export const AddExercises = {
     onClick: action("clicked"),
   },
 };
+
+export const CancelWorkout = {
+  args: {
+    entry: "cancelworkout",
+    onClick: action("clicked"),
+  },
+};
