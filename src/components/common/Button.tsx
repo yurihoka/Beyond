@@ -1,7 +1,7 @@
 import React from "react";
 import { ButtonType } from "./types";
 
-const Button = ({ entry }: ButtonType) => {
+const Button = ({ entry, onClick }: ButtonType) => {
   const className =
     "bg-lime-200 hover:bg-lime-300 text-gray-700 py-2 px-8 rounded";
 
@@ -14,6 +14,11 @@ const Button = ({ entry }: ButtonType) => {
       )}
       {entry === "finishworkout" && (
         <button className={className}>FINISH WORKOUT</button>
+      )}
+      {entry === "addset" && (
+        <button className={className} onClick={onClick}>
+          ADD SET
+        </button>
       )}
     </div>
   );
