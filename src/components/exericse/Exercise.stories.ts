@@ -13,17 +13,8 @@ const meta: Meta<typeof Exercise> = {
       },
     },
   },
-  argTypes: {
-    entry: {
-      description: "ボタンに表示させたいテキスト",
-    },
-  },
 };
 
 export default meta;
 
-export const Default = {
-  args: {
-    entry: "Dashboard",
-  },
-};
+export const Default = {};
