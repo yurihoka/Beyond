@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../Navbar";
-import Button from "../Button";
+import Navbar from "../common/Navbar";
+import Button from "../common/Button";
 
 const Dashboard = () => {
   return (
