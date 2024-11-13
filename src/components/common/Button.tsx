@@ -20,6 +20,11 @@ const Button = ({ entry, onClick }: ButtonType) => {
           ADD SET
         </button>
       )}
+      {entry === "addexercises" && (
+        <button className={className} onClick={onClick}>
+          ADD EXERCISES
+        </button>
+      )}
     </div>
   );
 };

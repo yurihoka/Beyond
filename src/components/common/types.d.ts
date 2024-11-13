@@ -1,4 +1,10 @@
 export type ButtonType = {
-  entry: "signin" | "signup" | "startworkout" | "finishworkout" | "addset";
+  entry:
+    | "signin"
+    | "signup"
+    | "startworkout"
+    | "finishworkout"
+    | "addset"
+    | "addexercises";
   onClick: () => void;
 };

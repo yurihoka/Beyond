@@ -53,3 +53,10 @@ export const AddSet = {
     onClick: action("clicked"),
   },
 };
+
+export const AddExercises = {
+  args: {
+    entry: "addexercises",
+    onClick: action("clicked"),
+  },
+};
