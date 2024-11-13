@@ -21,9 +21,9 @@ const Exercise = () => {
         </thead>
         <tbody>
           <WorkoutRecord set={1} />
-          <Button entry={"addset"} onClick={() => {}} />
         </tbody>
       </table>
+      <Button entry={"addset"} onClick={() => {}} />
     </div>
   );
 };
