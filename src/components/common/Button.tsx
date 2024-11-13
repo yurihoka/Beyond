@@ -1,7 +1,7 @@
 import React from "react";
 import { ButtonType } from "./types";
 
-const Button = ({ entry, onClick }: ButtonType) => {
+const Button = ({ entry }: ButtonType) => {
   const className =
     "w-full bg-lime-300 hover:bg-lime-200 text-gray-700 py-2 px-8 rounded";
 
@@ -15,20 +15,12 @@ const Button = ({ entry, onClick }: ButtonType) => {
       {entry === "finishworkout" && (
         <button className={className}>FINISH WORKOUT</button>
       )}
-      {entry === "addset" && (
-        <button className={className} onClick={onClick}>
-          ADD SET
-        </button>
-      )}
+      {entry === "addset" && <button className={className}>ADD SET</button>}
       {entry === "addexercises" && (
-        <button className={className} onClick={onClick}>
-          ADD EXERCISES
-        </button>
+        <button className={className}>ADD EXERCISES</button>
       )}
       {entry === "cancelworkout" && (
-        <button className={className} onClick={onClick}>
-          CANCEL WORKOUT
-        </button>
+        <button className={className}>CANCEL WORKOUT</button>
       )}
     </div>
   );
