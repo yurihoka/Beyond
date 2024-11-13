@@ -9,14 +9,12 @@ export async function POST(req: NextRequest) {
       process.env.SUPABASE_URL as string,
       process.env.SUPABASE_ANON_KEY as string
     );
-    const {
-      data,
-      error,
-    }: {
-      data: any;
-      error: any;
-    } = await supabase.from("users").select().eq("email", email);
-    const isUserFound = data.length > 0;
+    const { data, error } = await supabase
+      .from("users")
+      .select()
+      .eq("email", email);
+
+    const isUserFound = data !== null && data.length > 0;
     const isPasswordCorrect = isUserFound && data[0].password === password;
 
     if (!isUserFound) {
