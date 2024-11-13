@@ -1,13 +1,13 @@
-import { NextRequest } from "next/server";
 import { createMocks } from "node-mocks-http";
 
 import { POST } from "./route";
+import { NextApiRequest } from "next";
 
 describe("API: Login", () => {
   describe("ログイン成功", () => {
     test("", async () => {
       const user = { email: "test@xyz.com", password: "test" };
-      const { req }: { req: NextRequest } = createMocks({
+      const { req }: { req: NextApiRequest } = createMocks({
         method: "POST",
         body: user,
         headers: { "Content-Type": "application/json" },
@@ -21,7 +21,7 @@ describe("API: Login", () => {
   describe("ログイン失敗", () => {
     test("無効なパスワード", async () => {
       const userWithWrngPasswrd = { email: "test@xyz.com", password: "testt" };
-      const { req }: { req: NextRequest } = createMocks({
+      const { req }: { req: NextApiRequest } = createMocks({
         method: "POST",
         body: userWithWrngPasswrd,
         headers: { "Content-Type": "application/json" },
@@ -33,7 +33,7 @@ describe("API: Login", () => {
 
     test("存在しないユーザー", async () => {
       const nonexisistentUser = { email: "noexist@xyz.com", password: "test" };
-      const { req }: { req: NextRequest } = createMocks({
+      const { req }: { req: NextApiRequest } = createMocks({
         method: "POST",
         body: nonexisistentUser,
         headers: { "Content-Type": "application/json" },

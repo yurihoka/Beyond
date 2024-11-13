@@ -1,8 +1,8 @@
-import { NextRequest } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { NextApiRequest } from "next";
 
-export async function POST(req: NextRequest) {
-  const { email, password } = await req.json();
+export async function POST(req: NextApiRequest) {
+  const { email, password } = req.body;
 
   try {
     const supabase = createClient(
