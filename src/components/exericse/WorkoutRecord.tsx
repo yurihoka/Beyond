@@ -3,15 +3,20 @@ import RecordInput from "./RecordInput";
 
 const WorkoutRecord = ({ set }: { set: number }) => {
   return (
-    <div>
-      <div className="flex items-center gap-x-4">
-        <div className="flex flex-col items-center">
-          <p className="text-gray-900 mt-1">{set}</p>
-        </div>
+    <tr className="bg-white">
+      <th
+        scope="row"
+        className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+      >
+        {set}
+      </th>
+      <td className="px-6 py-4">
         <RecordInput field="weight" />
+      </td>
+      <td className="px-6 py-4">
         <RecordInput field="rep" />
-      </div>
-    </div>
+      </td>
+    </tr>
   );
 };
 
