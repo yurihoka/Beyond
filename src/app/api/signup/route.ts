@@ -4,8 +4,6 @@ import { NextApiRequest } from "next";
 export async function POST(req: NextApiRequest) {
   const { email, password } = req.body;
 
-  console.log(email, password);
-
   const supabase = createClient(
     process.env.SUPABASE_URL as string,
     process.env.SUPABASE_ANON_KEY as string
