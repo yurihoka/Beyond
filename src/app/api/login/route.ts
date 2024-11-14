@@ -1,14 +1,32 @@
+import { createClient } from "@supabase/supabase-js";
 import { NextApiRequest } from "next";
 
-export default async function POST(req: NextApiRequest) {
+export async function POST(req: NextApiRequest) {
   const { email, password } = req.body;
 
-  // 以下は全てDB構築するまでの一時的な認証処理
-  if (email !== "test@xyz.com") {
-    return new Response("存在しないユーザーです", { status: 404 });
+  try {
+    const supabase = createClient(
+      process.env.SUPABASE_URL as string,
+      process.env.SUPABASE_ANON_KEY as string
+    );
+    const { data, error } = await supabase
+      .from("users")
+      .select()
+      .eq("email", email);
+
+    const isUserFound = data !== null && data.length > 0;
+    const isPasswordCorrect = isUserFound && data[0].password === password;
+
+    if (!isUserFound) {
+      return new Response("存在しないユーザーです", { status: 404 });
+    }
+    if (!isPasswordCorrect) {
+      return new Response("パスワードが間違っています", { status: 401 });
+    }
+    return new Response("ログイン成功", { status: 200 });
+  } catch (err) {
+    console.log(err);
+
+    return new Response("サーバーエラー", { status: 500 });
   }
-  if (password !== "test") {
-    return new Response("パスワードが間違っています", { status: 401 });
-  }
-  return new Response("ログイン成功", { status: 200 });
 }

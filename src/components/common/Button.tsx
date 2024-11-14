@@ -4,6 +4,9 @@ import { ButtonType } from "./types";
 const Button = ({ entry, onClick }: ButtonType) => {
   const className =
     "bg-lime-200 hover:bg-lime-300 text-gray-700 py-2 px-8 rounded";
+const Button = ({ entry, onClick }: ButtonType) => {
+  const className =
+    "bg-lime-200 hover:bg-lime-300 text-gray-700 py-2 px-8 rounded";
 
   return (
     <div>

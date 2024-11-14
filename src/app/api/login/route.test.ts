@@ -1,7 +1,7 @@
-import { NextApiRequest } from "next";
 import { createMocks } from "node-mocks-http";
 
-import POST from "./route";
+import { POST } from "./route";
+import { NextApiRequest } from "next";
 
 describe("API: Login", () => {
   describe("ログイン成功", () => {
