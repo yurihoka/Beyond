@@ -1,14 +1,14 @@
 import { Meta } from "@storybook/react";
-import ExerciseName from "./ExerciseName";
+import ExerciseList from "./ExerciseList";
 
-const meta: Meta<typeof ExerciseName> = {
-  title: "Workout/ExerciseName",
-  component: ExerciseName,
+const meta: Meta<typeof ExerciseList> = {
+  title: "Workout/ExerciseList",
+  component: ExerciseList,
   tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
-        component: "エクササイズ名",
+        component: "エクササイズ一覧",
       },
     },
   },
