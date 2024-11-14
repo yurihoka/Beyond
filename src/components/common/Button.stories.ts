@@ -67,3 +67,4 @@ export const CancelWorkout = {
     onClick: action("clicked"),
   },
 };
+
