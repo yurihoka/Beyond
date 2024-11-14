@@ -1,4 +1,4 @@
-export type ButtonType = {
+export type ButtonProps = {
   entry:
     | "signin"
     | "signup"
@@ -7,5 +7,5 @@ export type ButtonType = {
     | "addset"
     | "addexercises"
     | "cancelworkout";
-  onClick: () => void;
+  onClick?: () => void;
 };
