@@ -24,7 +24,9 @@ const Button = ({ entry, onClick }: ButtonType) => {
         <button className={className}>ADD EXERCISES</button>
       )}
       {entry === "cancelworkout" && (
-        <button className={className}>CANCEL WORKOUT</button>
+        <button className={className} onClick={onClick}>
+          CANCEL WORKOUT
+        </button>
       )}
     </div>
   );
