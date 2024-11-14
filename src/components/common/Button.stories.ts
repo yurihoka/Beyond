@@ -1,5 +1,6 @@
 import { Meta } from "@storybook/react";
 import Button from "./Button";
+import { action } from "@storybook/addon-actions";
 
 const meta: Meta<typeof Button> = {
   title: "Common/Button",
@@ -43,5 +44,12 @@ export const StartWorkout = {
 export const FinishWorkout = {
   args: {
     entry: "finishworkout",
+  },
+};
+
+export const AddSet = {
+  args: {
+    entry: "addset",
+    onClick: action("clicked"),
   },
 };

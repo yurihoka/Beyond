@@ -1,29 +1,25 @@
 import React from "react";
 import { ButtonType } from "./types";
 
-const Button = ({ entry }: ButtonType) => {
-  let buttonTxt;
-
-  switch (entry) {
-    case "signin":
-      buttonTxt = "Sign in";
-      break;
-    case "signup":
-      buttonTxt = "Sign up";
-      break;
-    case "startworkout":
-      buttonTxt = "Start Workout";
-      break;
-    case "finishworkout":
-      buttonTxt = "Finish";
-      break;
-  }
+const Button = ({ entry, onClick }: ButtonType) => {
+  const className =
+    "bg-lime-200 hover:bg-lime-300 text-gray-700 py-2 px-8 rounded";
 
   return (
     <div>
-      <button className="bg-lime-200 hover:bg-lime-300 text-gray-700 py-2 px-8 rounded">
-        {buttonTxt}
-      </button>
+      {entry === "signin" && <button className={className}>SIGN IN</button>}
+      {entry === "signup" && <button className={className}>SIGN UP</button>}
+      {entry === "startworkout" && (
+        <button className={className}>START WORKOUT</button>
+      )}
+      {entry === "finishworkout" && (
+        <button className={className}>FINISH WORKOUT</button>
+      )}
+      {entry === "addset" && (
+        <button className={className} onClick={onClick}>
+          ADD SET
+        </button>
+      )}
     </div>
   );
 };
