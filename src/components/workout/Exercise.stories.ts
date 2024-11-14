@@ -3,7 +3,7 @@ import Exercise from "./Exercise";
 import { parseArgs } from "util";
 
 const meta: Meta<typeof Exercise> = {
-  title: "Exercise/Exercise",
+  title: "Workout/Exercise",
   component: Exercise,
   tags: ["autodocs"],
   parameters: {
@@ -18,3 +18,5 @@ const meta: Meta<typeof Exercise> = {
 export default meta;
 
 export const Default = {};
+
+export const AddSet = {};

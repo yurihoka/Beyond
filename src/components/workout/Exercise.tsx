@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import WorkoutRecord from "./WorkoutRecord";
 import Button from "../common/Button";
 
 const Exercise = () => {
+  const [sets, setSets] = useState([1]);
+  const addSet = () => {
+    setSets([...sets, sets.length + 1]);
+  };
+
   return (
     <div className="relative overflow-x-auto">
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -20,10 +25,12 @@ const Exercise = () => {
           </tr>
         </thead>
         <tbody>
-          <WorkoutRecord set={1} />
+          {sets.map((set, index) => (
+            <WorkoutRecord key={index} set={set} />
+          ))}
         </tbody>
       </table>
-      <Button entry={"addset"} onClick={() => {}} />
+      <Button entry="addset" onClick={addSet} />
     </div>
   );
 };
