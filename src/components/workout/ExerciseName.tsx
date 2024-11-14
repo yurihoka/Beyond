@@ -5,17 +5,9 @@ type ExerciseNameProps = {
 };
 
 const ExerciseName = ({ name }: ExerciseNameProps) => {
-  let exerciseName;
-
-  switch (name) {
-    case "Squat":
-      exerciseName = "Squat";
-      break;
-  }
-
   return (
     <div>
-      <h1>{name}</h1>
+      <h1 className="font-bold text-2xl">{name}</h1>
     </div>
   );
 };

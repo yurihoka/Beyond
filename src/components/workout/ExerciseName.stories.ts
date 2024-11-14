@@ -23,6 +23,6 @@ export default meta;
 
 export const Squat = {
   args: {
-    name: "Squat",
+    name: "squat",
   },
 };
