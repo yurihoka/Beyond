@@ -1,9 +1,9 @@
 import React from "react";
 import Input from "./Input";
 import Button from "./Button";
-import { ButtonType } from "./types";
+import { ButtonProps } from "./types";
 
-const Form = ({ entry }: ButtonType) => {
+const Form = ({ entry }: ButtonProps) => {
   return (
     <div>
       <Input variant="Email" />
