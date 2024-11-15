@@ -1,9 +1,9 @@
 import React from "react";
-import { ButtonType } from "./types";
+import { ButtonProps } from "./types";
 
-const Button = ({ entry, onClick }: ButtonType) => {
+const Button = ({ entry, onClick }: ButtonProps) => {
   const className =
-    "w-full bg-lime-300 hover:bg-lime-200 text-gray-700 py-2 px-8 rounded";
+    "bg-lime-200 hover:bg-lime-300 text-gray-700 py-2 px-8 rounded";
 
   return (
     <div>
