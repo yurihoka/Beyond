@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../Navbar";
-import Button from "../Button";
+import Navbar from "../common/Navbar";
+import Button from "../common/Button";
 
 const Dashboard = () => {
   return (
@@ -9,7 +9,7 @@ const Dashboard = () => {
         <Navbar userEmail="test@xyz.com" />
       </div>
       <div className="flex flex-col items-center justify-center pt-16">
-        <Button entry="startworkout" />
+        <Button entry="startworkout" onClick={() => {}} />
         <h1 className="mt-4 bg-gray-200 px-20 py-10">HISTORY</h1>
       </div>
     </div>
