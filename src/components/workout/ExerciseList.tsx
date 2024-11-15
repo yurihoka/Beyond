@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../common/Button";
-
+import { redirect } from "next/navigation";
 // 現時点では使用しないためコメントアウト
 // type ExerciseListProps = {
 //   name: string;
@@ -12,7 +12,12 @@ const exerciseNames = ["Squat", "Bench Press", "Chest Press", "Deadlift"];
 const ExerciseList = () => {
   return (
     <div>
-      <Button entry={"closeexerciselist"} />
+      <Button
+        entry={"closeexerciselist"}
+        onClick={() => {
+          redirect("/workout");
+        }}
+      />
       <div className="flex justify-center items-center min-h-screen">
         <ul className="w-full max-w-xl flex flex-col">
           {exerciseNames.map((exerciseName, index) => (
