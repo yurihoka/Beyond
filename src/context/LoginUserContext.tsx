@@ -25,3 +25,11 @@ export const LoginUserProvider = ({
     </LoginUserContext.Provider>
   );
 };
+
+export const useLoginUser = () => {
+  const [loginUser, setLoginUser] = useContext<LoginUserContextType>(
+    LoginUserContext
+  ) ?? [null, () => {}];
+
+  return [loginUser, setLoginUser];
+};
