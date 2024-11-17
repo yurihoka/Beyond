@@ -6,6 +6,7 @@ export type ButtonProps = {
     | "finishworkout"
     | "addset"
     | "addexercises"
-    | "cancelworkout";
+    | "cancelworkout"
+    | "closeexerciselist";
   onClick?: () => void;
 };

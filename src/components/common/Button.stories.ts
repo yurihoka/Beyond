@@ -63,3 +63,9 @@ export const CancelWorkout = {
     entry: "cancelworkout",
   },
 };
+
+export const CloseExerciseList = {
+  args: {
+    entry: "closeexerciselist",
+  },
+};
