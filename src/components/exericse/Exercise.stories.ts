@@ -18,3 +18,5 @@ const meta: Meta<typeof Exercise> = {
 export default meta;
 
 export const Default = {};
+
+export const AddSet = {};

@@ -50,20 +50,17 @@ export const FinishWorkout = {
 export const AddSet = {
   args: {
     entry: "addset",
-    onClick: action("clicked"),
   },
 };
 
 export const AddExercises = {
   args: {
     entry: "addexercises",
-    onClick: action("clicked"),
   },
 };
 
 export const CancelWorkout = {
   args: {
     entry: "cancelworkout",
-    onClick: action("clicked"),
   },
 };
