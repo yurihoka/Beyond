@@ -3,7 +3,7 @@ import { ButtonProps } from "./types";
 
 const Button = ({ entry, onClick }: ButtonProps) => {
   const className =
-    "bg-lime-200 hover:bg-lime-300 text-gray-700 py-2 px-8 rounded";
+    "w-full bg-lime-300 hover:bg-lime-200 text-gray-700 py-2 px-8 rounded";
 
   return (
     <div>
@@ -21,14 +21,10 @@ const Button = ({ entry, onClick }: ButtonProps) => {
         </button>
       )}
       {entry === "addexercises" && (
-        <button className={className} onClick={onClick}>
-          ADD EXERCISES
-        </button>
+        <button className={className}>ADD EXERCISES</button>
       )}
       {entry === "cancelworkout" && (
-        <button className={className} onClick={onClick}>
-          CANCEL WORKOUT
-        </button>
+        <button className={className}>CANCEL WORKOUT</button>
       )}
     </div>
   );
