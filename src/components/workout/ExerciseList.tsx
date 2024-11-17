@@ -1,10 +1,6 @@
 import React from "react";
 import Button from "../common/Button";
 import { redirect } from "next/navigation";
-// 現時点では使用しないためコメントアウト
-// type ExerciseListProps = {
-//   name: string;
-// };
 
 // ダミーデータ
 const exerciseNames = ["Squat", "Bench Press", "Chest Press", "Deadlift"];

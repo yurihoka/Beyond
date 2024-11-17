@@ -1,10 +1,10 @@
 import React from "react";
 
-type InputType = {
+type InputProps = {
   variant: "Email" | "Password";
 };
 
-const Input = ({ variant }: InputType) => {
+const Input = ({ variant }: InputProps) => {
   let inputTxt;
 
   switch (variant) {

@@ -1,4 +1,4 @@
-export type ButtonType = {
+export type ButtonProps = {
   entry:
     | "signin"
     | "signup"
