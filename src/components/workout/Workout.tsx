@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../common/Navbar";
 import Button from "../common/Button";
 import Exercise from "./Exercise";
+import { redirect } from "next/navigation";
 
 const Workout = () => {
   const [currentDate, setCurrentDate] = useState<string>("");
@@ -22,7 +23,12 @@ const Workout = () => {
       </div>
       <Exercise />
       <Button entry="addexercises" />
-      <Button entry="cancelworkout" />
+      <Button
+        entry="cancelworkout"
+        onClick={() => {
+          redirect(`/dashboard`);
+        }}
+      />
     </div>
   );
 };
