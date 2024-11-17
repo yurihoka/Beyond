@@ -1,7 +1,7 @@
 import { NextApiRequest } from "next";
 import { createMocks } from "node-mocks-http";
 
-import POST from "./route";
+import { POST } from "./route";
 
 describe("API: Signup", () => {
   describe("サインアップ成功", () => {
@@ -21,8 +21,8 @@ describe("API: Signup", () => {
   describe("サインアップ失敗", () => {
     test("既登録ユーザーあり", async () => {
       const existentUser = {
-        email: "existentuser@xyz.com",
-        password: "existentuser",
+        email: "test@xyz.com",
+        password: "test",
       };
       const { req }: { req: NextApiRequest } = createMocks({
         method: "POST",
