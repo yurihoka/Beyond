@@ -21,7 +21,6 @@ const Workout = () => {
         <h1>{currentDate}</h1>
         <Button entry="finishworkout" />
       </div>
-
       <Exercise />
       <Button entry="addexercises" />
       <Button
