@@ -1,5 +1,5 @@
 import { createMocks } from "node-mocks-http";
-import { GET, POST } from "./route";
+import { GET, POST, PATCH } from "./route";
 import { type NextApiRequest } from "next";
 
 describe("API: exercises", () => {
@@ -32,6 +32,51 @@ describe("API: exercises", () => {
       const response = await POST(req);
 
       expect(response.status).toBe(409);
+    });
+  });
+
+  describe("PATCH", () => {
+    test("トレーニング種目を更新", async () => {
+      const updatedExercise = {
+        id: 1,
+        name: "Bench Press (updated)",
+      };
+      const { req }: { req: NextApiRequest } = createMocks({
+        method: "PATCH",
+        body: updatedExercise,
+        headers: { "Content-Type": "application/json" },
+      });
+      const response = await PATCH(req);
+
+      expect(response.status).toBe(200);
+    });
+    test("更新トレーニング種目が既に存在する", async () => {
+      const existentExercise = {
+        id: 1,
+        name: "Squat",
+      };
+      const { req }: { req: NextApiRequest } = createMocks({
+        method: "PATCH",
+        body: existentExercise,
+        headers: { "Content-Type": "application/json" },
+      });
+      const response = await PATCH(req);
+
+      expect(response.status).toBe(409);
+    });
+    test("更新トレーニング種目が存在しない", async () => {
+      const nonExistentExercise = {
+        id: 1000,
+        name: "Bench Press",
+      };
+      const { req }: { req: NextApiRequest } = createMocks({
+        method: "PATCH",
+        body: nonExistentExercise,
+        headers: { "Content-Type": "application/json" },
+      });
+      const response = await PATCH(req);
+
+      expect(response.status).toBe(404);
     });
   });
 });
