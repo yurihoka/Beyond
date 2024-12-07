@@ -69,3 +69,25 @@ export async function PATCH(req: NextApiRequest) {
     return new Response("サーバーエラーが発生しました", { status: 500 });
   }
 }
+
+export async function DELETE(req: NextApiRequest) {
+  try {
+    const id = req.body.id;
+    const client = createClient(
+      process.env.SUPABASE_URL as string,
+      process.env.SUPABASE_ANON_KEY as string
+    );
+    const { data, error } = await client
+      .from("exercises")
+      .delete()
+      .eq("id", id)
+      .select();
+
+    if (data?.length === 0) {
+      return new Response("存在しないトレーニング種目です", { status: 404 });
+    }
+    return new Response("トレーニング種目が削除されました", { status: 204 });
+  } catch (err) {
+    return new Response("サーバーエラーが発生しました", { status: 500 });
+  }
+}
