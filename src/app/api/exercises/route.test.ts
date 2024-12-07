@@ -89,8 +89,6 @@ describe("API: exercises", () => {
       });
       const response = await DELETE(req);
 
-      console.log("response ", response);
-
       expect(response.status).toBe(204);
     });
     test("削除トレーニング種目が存在しない", async () => {
