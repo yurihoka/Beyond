@@ -1,5 +1,5 @@
 import { createMocks } from "node-mocks-http";
-import { GET, POST, PATCH } from "./route";
+import { GET, POST, PATCH, DELETE } from "./route";
 import { type NextApiRequest } from "next";
 
 describe("API: exercises", () => {
@@ -75,6 +75,31 @@ describe("API: exercises", () => {
         headers: { "Content-Type": "application/json" },
       });
       const response = await PATCH(req);
+
+      expect(response.status).toBe(404);
+    });
+  });
+
+  describe("DELETE", () => {
+    test("トレーニング種目を削除", async () => {
+      const { req }: { req: NextApiRequest } = createMocks({
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: { id: "48" },
+      });
+      const response = await DELETE(req);
+
+      console.log("response ", response);
+
+      expect(response.status).toBe(204);
+    });
+    test("削除トレーニング種目が存在しない", async () => {
+      const { req }: { req: NextApiRequest } = createMocks({
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: { id: "1000" },
+      });
+      const response = await DELETE(req);
 
       expect(response.status).toBe(404);
     });
