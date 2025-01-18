@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
 import Form from "@/components/common/Form";
-import { ButtonProps } from "@/components/common/types";
 
-const Page: NextPage<ButtonProps> = ({ entry }) => {
+const Page: NextPage = () => {
   return (
     <>
-      <Form entry={entry} />
+      <Form entry="signin" />
     </>
   );
 };
