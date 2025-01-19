@@ -1,6 +1,5 @@
 import { Meta } from "@storybook/react";
 import { Exercise } from "@/components";
-import { parseArgs } from "util";
 
 const meta: Meta<typeof Exercise> = {
   title: "Workout/Exercise",
