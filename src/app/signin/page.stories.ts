@@ -8,7 +8,7 @@ const meta: Meta<typeof Page> = {
   parameters: {
     docs: {
       description: {
-        component: "サインイン/サインアップ画面",
+        component: "サインイン画面",
       },
     },
   },
