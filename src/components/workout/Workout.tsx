@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../common/Navbar";
-import Button from "../common/Button";
-import Exercise from "./Exercise";
+import { Navbar, Button, Exercise } from "@/components";
 import { redirect } from "next/navigation";
 
 const Workout = () => {

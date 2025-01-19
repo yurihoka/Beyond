@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react";
-import WorkoutRecord from "./WorkoutRecord";
+import { WorkoutRecord } from "@/components";
 
 const meta: Meta<typeof WorkoutRecord> = {
   title: "Workout/WorkoutRecord",

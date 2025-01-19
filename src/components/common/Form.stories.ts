@@ -1,6 +1,5 @@
 import { Meta } from "@storybook/react";
-import Form from "./Form";
-import { parseArgs } from "util";
+import { Form } from "@/components";
 
 const meta: Meta<typeof Form> = {
   title: "Common/Form",

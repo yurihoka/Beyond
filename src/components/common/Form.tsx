@@ -1,6 +1,5 @@
 import React from "react";
-import Input from "./Input";
-import Button from "./Button";
+import { Input, Button } from "@/components";
 import { ButtonProps } from "./types";
 
 const Form = ({ entry }: ButtonProps) => {

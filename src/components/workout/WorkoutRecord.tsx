@@ -1,5 +1,5 @@
 import React from "react";
-import RecordInput from "./RecordInput";
+import { RecordInput } from "@/components";
 
 const WorkoutRecord = ({ set }: { set: number }) => {
   return (

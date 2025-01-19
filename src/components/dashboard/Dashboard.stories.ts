@@ -1,6 +1,5 @@
 import { Meta } from "@storybook/react";
-import Dashboard from "./Dashboard";
-import { parseArgs } from "util";
+import { Dashboard } from "@/components";
 
 const meta: Meta<typeof Dashboard> = {
   title: "Dashboard/Dashboard",
