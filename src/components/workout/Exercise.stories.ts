@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react";
-import Exercise from "./Exercise";
+import { Exercise } from "@/components";
 import { parseArgs } from "util";
 
 const meta: Meta<typeof Exercise> = {

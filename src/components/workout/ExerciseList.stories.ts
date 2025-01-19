@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react";
-import ExerciseList from "./ExerciseList";
+import { ExerciseList } from "@/components";
 
 const meta: Meta<typeof ExerciseList> = {
   title: "Workout/ExerciseList",

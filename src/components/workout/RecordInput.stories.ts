@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react";
-import RecordInput from "./RecordInput";
+import { RecordInput } from "@/components";
 
 const meta: Meta<typeof RecordInput> = {
   title: "Workout/RecordInput",

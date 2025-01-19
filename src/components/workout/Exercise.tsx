@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import WorkoutRecord from "./WorkoutRecord";
-import Button from "../common/Button";
-import ExerciseList from "./ExerciseList";
+import { WorkoutRecord, Button, ExerciseList } from "@/components";
 
 const Exercise = () => {
   const [sets, setSets] = useState([1]);
