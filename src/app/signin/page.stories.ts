@@ -12,17 +12,8 @@ const meta: Meta<typeof Page> = {
       },
     },
   },
-  argTypes: {
-    entry: {
-      description: "ボタンに表示させたいテキスト",
-    },
-  },
 };
 
 export default meta;
 
-export const Signin = {
-  args: {
-    entry: "signin",
-  },
-};
+export const Signin = {};
