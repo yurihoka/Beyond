@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { Navbar, Button, Exercise } from "@/components";
 import { redirect } from "next/navigation";
