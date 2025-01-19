@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Form from "@/components/common/Form";
+import { Form } from "@/components";
 
 const Page: NextPage = () => {
   return (
