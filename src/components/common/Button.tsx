@@ -8,8 +8,16 @@ const Button = ({ entry, onClick }: ButtonProps) => {
     <div>
       <div className="max-w-md w-full">
         <div className="!mt-8">
-          {entry === "signin" && <button className={className}>SIGN IN</button>}
-          {entry === "signup" && <button className={className}>SIGN UP</button>}
+          {entry === "signin" && (
+            <button className={className} onClick={onClick}>
+              SIGN IN
+            </button>
+          )}
+          {entry === "signup" && (
+            <button className={className} onClick={onClick}>
+              SIGN UP
+            </button>
+          )}
           {entry === "startworkout" && (
             <button className={className}>START WORKOUT</button>
           )}
