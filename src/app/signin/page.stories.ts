@@ -11,6 +11,9 @@ const meta: Meta<typeof Page> = {
         component: "サインイン画面",
       },
     },
+    nextjs: {
+      appDirectory: true,
+    },
   },
 };
 
