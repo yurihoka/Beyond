@@ -6,7 +6,7 @@ describe("API: histories", () => {
   test("全ユーザのデータ取得", async () => {
     const { req }: { req: NextApiRequest } = createMocks({
       method: "GET",
-      query: { user: "Hidemichi" },
+      query: { email: "test@xyz.com" },
     });
     const response = await GET(req);
 
