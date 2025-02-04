@@ -12,4 +12,16 @@ describe("API: histories", () => {
 
     expect(response.status).toBe(200);
   });
+
+  describe("エラー処理", () => {
+    test("存在しないユーザ", async () => {
+      const { req }: { req: NextApiRequest } = createMocks({
+        method: "GET",
+        query: { email: "nonexistentuser@xyz.com" },
+      });
+      const response = await GET(req);
+
+      expect(response.status).toBe(404);
+    });
+  });
 });

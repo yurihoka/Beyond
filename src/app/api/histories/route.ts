@@ -15,6 +15,9 @@ export async function GET(req: NextApiRequest) {
       .eq("email", email);
 
     if (error) throw error;
+    if (data?.length === 0) {
+      return new Response("存在しないトレーニング種目です", { status: 404 });
+    }
 
     return new Response(JSON.stringify(data));
   } catch (err) {
