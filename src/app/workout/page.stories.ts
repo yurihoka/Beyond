@@ -1,0 +1,19 @@
+import { Meta } from "@storybook/react";
+import { Workout } from "@/components";
+
+const meta: Meta<typeof Workout> = {
+  title: "Workout/Page",
+  component: Workout,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "エクササイズの記録や追加、ワークアウト終了・中断ができる",
+      },
+    },
+  },
+};
+
+export default meta;
+
+export const Default = {};
