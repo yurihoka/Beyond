@@ -1,7 +1,12 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
+import { Dashboard } from "@/components";
 
 const Page: NextPage = () => {
-  return <></>;
+  return (
+    <>
+      <Dashboard />
+    </>
+  );
 };
 
 export default Page;
