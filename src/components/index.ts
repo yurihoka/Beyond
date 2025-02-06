@@ -12,5 +12,4 @@ export { default as Exercise } from "./workout/Exercise";
 export { default as ExerciseList } from "./workout/ExerciseList";
 export { default as ExerciseName } from "./workout/ExerciseName";
 export { default as RecordInput } from "./workout/RecordInput";
-export { default as Workout } from "./workout/Workout";
 export { default as WorkoutRecord } from "./workout/WorkoutRecord";
