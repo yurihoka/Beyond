@@ -17,7 +17,7 @@ const Workout = () => {
       <div className="fixed top-0 left-0 w-full">
         <Navbar userEmail="test@xyz.com" />
       </div>
-      <div className="flex flex-col pt-16">
+      <div className="flex pt-10 justify-between justify-center items-center">
         <h1>{currentDate}</h1>
         <Button entry="finishworkout" />
       </div>
