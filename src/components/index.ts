@@ -5,7 +5,7 @@ export { default as Input } from "./common/Input";
 export { default as Navbar } from "./common/Navbar";
 
 /*--- dashboard ---*/
-export { default as Dashboard } from "./dashboard/Dashboard";
+// export { default as Dashboard } from "./dashboard/Dashboard";
 
 /*--- workout ---*/
 export { default as Exercise } from "./workout/Exercise";

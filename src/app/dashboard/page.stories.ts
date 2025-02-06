@@ -1,9 +1,9 @@
 import { Meta } from "@storybook/react";
-import { Dashboard } from "@/components";
+import Page from "./page";
 
-const meta: Meta<typeof Dashboard> = {
+const meta: Meta<typeof Page> = {
   title: "Dashboard/Page",
-  component: Dashboard,
+  component: Page,
   tags: ["autodocs"],
   parameters: {
     docs: {
