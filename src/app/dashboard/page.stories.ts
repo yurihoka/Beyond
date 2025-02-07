@@ -11,6 +11,9 @@ const meta: Meta<typeof Page> = {
         component: "ダッシュボード",
       },
     },
+    nextjs: {
+      appDirectory: true,
+    },
   },
   argTypes: {
     entry: {
