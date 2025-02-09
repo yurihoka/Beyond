@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 // ダミーデータ
 const exerciseNames = ["Squat", "Bench Press", "Chest Press", "Deadlift"];
 
-const ExerciseList = () => {
+const ExerciseListPopUp = () => {
   return (
     <div>
       <Button
@@ -45,4 +45,4 @@ const ExerciseList = () => {
   );
 };
 
-export default ExerciseList;
+export default ExerciseListPopUp;
