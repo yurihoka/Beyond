@@ -2,17 +2,28 @@ import { validateLoginUser } from "./validateLoginUser";
 
 describe("Login APIコール用のUtil関数", () => {
   describe("ログイン成功", () => {
-    // test("＿", async () => {
-    //   const res = await validateLoginUser("newuser@xyz.com", "newuser");
-    //   expect(res?.isValidLoginUser).toBeTruthy();
-    // });
+    test("＿", async () => {
+      const res = await validateLoginUser("newuser@xyz.com", "newuser");
+
+      expect(res?.isValidLoginUser).toBeTruthy();
+    });
   });
 
   describe("ログイン失敗", () => {
-    test("Emailが存在しない", async () => {
-      //   const res = await validateLoginUser("test@xyz.com", "test");
-      //   expect(res?.isValidLoginUser).toBeFalsy();
-      //   expect(res?.msg).toEqual("Emailが既に使われています");
+    test("登録なし", async () => {
+      const res = await validateLoginUser(
+        "nonexistentuser@xyz.com",
+        "noexistentuser"
+      );
+
+      expect(res?.isValidLoginUser).toBeFalsy();
+      expect(res?.msg).toEqual("存在しないユーザーです");
+    });
+    test("パスワード間違い", async () => {
+      const res = await validateLoginUser("test@xyz.com", "wrongpassword");
+
+      expect(res?.isValidLoginUser).toBeFalsy();
+      expect(res?.msg).toEqual("パスワードが間違っています");
     });
   });
 });
