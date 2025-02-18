@@ -9,7 +9,7 @@ export { default as Dashboard } from "./dashboard/Dashboard";
 
 /*--- workout ---*/
 export { default as Exercise } from "./workout/Exercise";
-export { default as ExerciseList } from "./workout/ExerciseList";
+export { default as ExerciseListPopUp } from "./workout/ExerciseListPopUp";
 export { default as ExerciseName } from "./workout/ExerciseName";
 export { default as RecordInput } from "./workout/RecordInput";
 export { default as Workout } from "./workout/Workout";

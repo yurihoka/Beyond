@@ -3,8 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Button, Exercise } from "@/components";
 import { redirect } from "next/navigation";
+import { ExerciseListPopUp } from "@/components";
 
 const Workout = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [currentDate, setCurrentDate] = useState<string>("");
 
   useEffect(() => {
@@ -14,6 +16,11 @@ const Workout = () => {
 
   return (
     <div className="relative">
+      <ExerciseListPopUp
+        open={isOpen}
+        onCancel={() => setIsOpen(false)}
+        onOk={() => setIsOpen(false)}
+      />
       <div className="fixed top-0 left-0 w-full">
         <Navbar userEmail="test@xyz.com" />
       </div>
@@ -22,7 +29,7 @@ const Workout = () => {
         <Button entry="finishworkout" />
       </div>
       <Exercise />
-      <Button entry="addexercises" />
+      <Button entry="addexercises" onClick={() => setIsOpen(true)} />
       <Button
         entry="cancelworkout"
         onClick={() => {

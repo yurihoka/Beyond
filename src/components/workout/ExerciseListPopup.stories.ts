@@ -1,9 +1,9 @@
 import { Meta } from "@storybook/react";
-import { ExerciseList } from "@/components";
+import ExerciseListPopUp from "./ExerciseListPopUp";
 
-const meta: Meta<typeof ExerciseList> = {
-  title: "Workout/ExerciseList",
-  component: ExerciseList,
+const meta: Meta<typeof ExerciseListPopUp> = {
+  title: "Workout/ExerciseListPopUp",
+  component: ExerciseListPopUp,
   tags: ["autodocs"],
   parameters: {
     docs: {
@@ -12,17 +12,8 @@ const meta: Meta<typeof ExerciseList> = {
       },
     },
   },
-  argTypes: {
-    name: {
-      description: "表示させたいエクササイズ名",
-    },
-  },
 };
 
 export default meta;
 
-export const Squat = {
-  args: {
-    name: "squat",
-  },
-};
+export const Default = {};
