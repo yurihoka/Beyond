@@ -1,15 +1,18 @@
 import { Meta } from "@storybook/react";
-import { Dashboard } from "@/components";
+import Page from "./page";
 
-const meta: Meta<typeof Dashboard> = {
-  title: "Dashboard/Dashboard",
-  component: Dashboard,
+const meta: Meta<typeof Page> = {
+  title: "Dashboard/Page",
+  component: Page,
   tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
         component: "ダッシュボード",
       },
+    },
+    nextjs: {
+      appDirectory: true,
     },
   },
   argTypes: {

@@ -1,3 +1,4 @@
+import { Navbar } from "@/components";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,7 +8,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="fixed top-0 left-0 w-full">
+          <Navbar userEmail={"test@xyz.com"} />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
