@@ -1,4 +1,4 @@
-import { Navbar } from "@/components";
+import { LoginUserProvider } from "@/contexts/LoginUserContext";
 import "./globals.css";
 
 export default function RootLayout({
@@ -9,10 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="fixed top-0 left-0 w-full">
-          <Navbar userEmail={"test@xyz.com"} />
-        </div>
-        {children}
+        <LoginUserProvider>{children}</LoginUserProvider>
       </body>
     </html>
   );
