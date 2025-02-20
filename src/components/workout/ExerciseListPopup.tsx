@@ -7,15 +7,14 @@ import { log } from "console";
 const exerciseNames = ["Squat", "Bench Press", "Chest Press", "Deadlift"];
 
 export type PopUpProps = {
-  open: boolean;
   onCancel: () => void;
   onOk: () => void;
 };
 
 const ExerciseListPopUp = (props: PopUpProps) => {
-  return props.open ? (
+  return (
     <>
-      <div className=" top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-48 p-5 flex flex-col items-start absolute z-20">
+      <div className="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-48 p-5 flex flex-col items-start absolute z-20">
         <ul className="w-full max-w-xl mt-auto flex flex-col">
           {exerciseNames.map((exerciseName, index) => (
             <li
@@ -53,8 +52,6 @@ const ExerciseListPopUp = (props: PopUpProps) => {
         onClick={() => props.onCancel()}
       ></div>
     </>
-  ) : (
-    <></>
   );
 };
 

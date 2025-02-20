@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/react";
-import ExerciseListPopUp from "./ExerciseListPopUp";
+import ExerciseListPopUp from "./ExerciseListPopup";
 
 const meta: Meta<typeof ExerciseListPopUp> = {
   title: "Workout/ExerciseListPopUp",
