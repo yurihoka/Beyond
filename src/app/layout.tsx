@@ -1,4 +1,3 @@
-import { LoginUserProvider } from "@/contexts/LoginUserContext";
 import "./globals.css";
 
 export default function RootLayout({
@@ -8,9 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <LoginUserProvider>{children}</LoginUserProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
