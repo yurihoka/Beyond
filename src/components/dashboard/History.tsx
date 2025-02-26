@@ -1,19 +1,5 @@
 import { type MouseEventHandler, useState } from "react";
-
-type Set = {
-  reps: number;
-  weight: number;
-};
-
-type Exercise = {
-  name: string;
-  sets: Set[];
-};
-
-type Session = {
-  date: string;
-  data: Exercise[];
-};
+import type { Session, Exercise } from "./types";
 
 const History = ({ sessions }: { sessions: Session[] }) => {
   return (
