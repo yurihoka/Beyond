@@ -1,4 +1,4 @@
-import { type MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import type { Session, Exercise } from "./types";
 
 const History = ({ sessions }: { sessions: Session[] }) => {
