@@ -10,3 +10,6 @@ export { default as ExerciseList } from "./workout/ExerciseList";
 export { default as ExerciseName } from "./workout/ExerciseName";
 export { default as RecordInput } from "./workout/RecordInput";
 export { default as WorkoutRecord } from "./workout/WorkoutRecord";
+
+/*--- dashboard ---*/
+export { default as History } from "./dashboard/History";
