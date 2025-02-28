@@ -1,4 +1,5 @@
 import React from "react";
+import { SignoutButton } from "@/components";
 
 export type NavbarProps = {
   userEmail: string;
@@ -14,6 +15,7 @@ const Navbar = ({ userEmail }: NavbarProps) => {
           </a>
         </li>
         <li className="mr-3">
+          <SignoutButton />
           <a className="text-gray-500 hover:text-gray-700" href="#">
             {userEmail}
           </a>
