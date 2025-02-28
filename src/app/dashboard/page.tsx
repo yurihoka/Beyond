@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { NextPage } from "next";
-import { Button, Navbar } from "@/components";
+import { Button, Navbar, History } from "@/components";
 import { useRouter } from "next/navigation";
 
 const Page: NextPage = () => {
@@ -23,7 +23,9 @@ const Page: NextPage = () => {
       </div>
       <div className="flex flex-col items-center justify-center pt-16">
         <Button entry="startworkout" onClick={onClick} />
-        <h1 className="mt-4 bg-gray-200 px-20 py-10">HISTORY</h1>
+        <div className="w-full min-h-64 flex justify-center items-center">
+          <History sessions={[]} />
+        </div>
       </div>
     </div>
   );
