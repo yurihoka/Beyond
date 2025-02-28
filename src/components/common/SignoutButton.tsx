@@ -10,7 +10,7 @@ const SignoutButton = () => {
 
   return (
     <button
-      className="bg-neutral-300 p-1 rounded-md text-gray-500"
+      className="p-1 rounded-md text-gray-500 hover:text-gray-700"
       onClick={onClick}
     >
       サインアウト
