@@ -2,9 +2,14 @@ import React from "react";
 
 type InputProps = {
   variant: "Email" | "Password";
+  value: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Input = ({ variant }: InputProps) => {
+const Input = ({ variant, value, setValue }: InputProps) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
   let inputTxt;
 
   switch (variant) {
@@ -28,6 +33,8 @@ const Input = ({ variant }: InputProps) => {
               required
               className="w-full text-gray-800 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
               placeholder={`Enter your ${inputTxt}`}
+              value={value}
+              onChange={onChange}
             />
             {inputTxt === "Email" ? (
               <svg
