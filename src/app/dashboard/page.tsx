@@ -7,13 +7,24 @@ import { useRouter } from "next/navigation";
 
 const Page: NextPage = () => {
   const [email, setEmail] = useState("");
+  const [sessions, setSessions] = useState([]);
+
   const router = useRouter();
   const onClick = () => router.push("/workout");
 
   useEffect(() => {
     const storedEmail = localStorage.getItem("email");
+    const updateUserHistory = async () => {
+      const res = await fetch(
+        `http://localhost:3000/api/histories?email=${storedEmail}`
+      );
+      const data = await res.json();
+
+      setSessions(data[0].data);
+    };
 
     setEmail(storedEmail ?? "Guest");
+    updateUserHistory();
   }, []);
 
   return (
@@ -24,7 +35,7 @@ const Page: NextPage = () => {
       <div className="flex flex-col items-center justify-center pt-16">
         <Button entry="startworkout" onClick={onClick} />
         <div className="w-full min-h-64 flex justify-center items-center">
-          <History sessions={[]} />
+          <History sessions={sessions} />
         </div>
       </div>
     </div>
