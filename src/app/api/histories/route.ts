@@ -1,8 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
-import { type NextApiRequest } from "next";
+import { NextRequest } from "next/server";
 
-export async function GET(req: NextApiRequest) {
-  const email = req.query.email;
+export async function GET(req: NextRequest) {
+  const email = req.nextUrl.searchParams.get("email");
 
   try {
     const client = createClient(
@@ -11,7 +11,7 @@ export async function GET(req: NextApiRequest) {
     );
     const { data, error } = await client
       .from("histories")
-      .select("*")
+      .select("data")
       .eq("email", email);
 
     if (error) throw error;
