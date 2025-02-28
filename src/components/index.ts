@@ -3,6 +3,7 @@ export { default as Button } from "./common/Button";
 export { default as Form } from "./common/Form";
 export { default as Input } from "./common/Input";
 export { default as Navbar } from "./common/Navbar";
+export { default as SignoutButton } from "./common/SignoutButton";
 
 /*--- workout ---*/
 export { default as Exercise } from "./workout/Exercise";
