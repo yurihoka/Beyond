@@ -27,7 +27,7 @@ const Form = ({
   setPswd,
 }: FormProps) => {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
       <Input variant="Email" value={email} setValue={setEmail} />
       <Input variant="Password" value={pswd} setValue={setPswd} />
       <Button entry={entry} onClick={onClick} />
