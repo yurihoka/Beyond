@@ -18,7 +18,9 @@ const Button = ({ entry, onClick }: ButtonProps) => {
           </button>
         )}
         {entry === "startworkout" && (
-          <button className={className}>START WORKOUT</button>
+          <button className={className} onClick={onClick}>
+            START WORKOUT
+          </button>
         )}
         {entry === "finishworkout" && (
           <button className={className}>FINISH WORKOUT</button>
