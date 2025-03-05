@@ -25,7 +25,7 @@ const Page: NextPage = () => {
   };
 
   return (
-    <>
+    <div className="flex items-center justify-center h-screen">
       <Form
         entry="signin"
         onClick={onClick}
@@ -34,7 +34,7 @@ const Page: NextPage = () => {
         pswd={pswd}
         setPswd={setPswd}
       />
-    </>
+    </div>
   );
 };
 
