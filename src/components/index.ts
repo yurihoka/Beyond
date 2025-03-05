@@ -4,6 +4,7 @@ export { default as Form } from "./common/Form";
 export { default as Input } from "./common/Input";
 export { default as Navbar } from "./common/Navbar";
 export { default as SignoutButton } from "./common/SignoutButton";
+export { default as NoAuthUserRedirection } from "./common/NoAuthUserRedirection";
 
 /*--- workout ---*/
 export { default as Exercise } from "./workout/Exercise";
