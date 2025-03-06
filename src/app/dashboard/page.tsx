@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { NextPage } from "next";
-import { Button, Navbar, History } from "@/components";
+import { Button, Navbar, History, NoAuthUserRedirection } from "@/components";
 import { useRouter } from "next/navigation";
 
 const Page: NextPage = () => {
@@ -28,17 +28,19 @@ const Page: NextPage = () => {
   }, []);
 
   return (
-    <div className="relative">
-      <div className="fixed top-0 left-0 w-full">
-        <Navbar userEmail={email} />
-      </div>
-      <div className="flex flex-col items-center justify-center pt-16">
-        <Button entry="startworkout" onClick={onClick} />
-        <div className="w-full min-h-64 flex justify-center items-center">
-          <History sessions={sessions} />
+    <NoAuthUserRedirection>
+      <div className="relative">
+        <div className="fixed top-0 left-0 w-full">
+          <Navbar userEmail={email} />
+        </div>
+        <div className="flex flex-col items-center justify-center pt-16">
+          <Button entry="startworkout" onClick={onClick} />
+          <div className="w-full min-h-64 flex justify-center items-center">
+            <History sessions={sessions} />
+          </div>
         </div>
       </div>
-    </div>
+    </NoAuthUserRedirection>
   );
 };
 

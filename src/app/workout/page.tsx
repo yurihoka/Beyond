@@ -2,7 +2,12 @@
 
 import type { NextPage } from "next";
 import React, { useEffect, useState } from "react";
-import { Button, Exercise, ExerciseListPopUp } from "@/components";
+import {
+  Button,
+  Exercise,
+  ExerciseListPopUp,
+  NoAuthUserRedirection,
+} from "@/components";
 import { useRouter } from "next/navigation";
 
 const Page: NextPage = () => {
@@ -17,7 +22,7 @@ const Page: NextPage = () => {
   }, []);
 
   return (
-    <>
+    <NoAuthUserRedirection>
       {isOpen && (
         <ExerciseListPopUp
           onCancel={() => setIsOpen(false)}
@@ -33,7 +38,7 @@ const Page: NextPage = () => {
         <Button entry="addexercises" onClick={() => setIsOpen(true)} />
         <Button entry="cancelworkout" onClick={onClick} />
       </div>
-    </>
+    </NoAuthUserRedirection>
   );
 };
 
