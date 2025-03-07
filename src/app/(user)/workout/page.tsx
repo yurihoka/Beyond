@@ -22,7 +22,7 @@ const Page: NextPage = () => {
   }, []);
 
   return (
-    <NoAuthUserRedirection>
+    <>
       {isOpen && (
         <ExerciseListPopUp
           onCancel={() => setIsOpen(false)}
@@ -38,7 +38,7 @@ const Page: NextPage = () => {
         <Button entry="addexercises" onClick={() => setIsOpen(true)} />
         <Button entry="cancelworkout" onClick={onClick} />
       </div>
-    </NoAuthUserRedirection>
+    </>
   );
 };
 
