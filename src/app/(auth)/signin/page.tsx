@@ -25,16 +25,14 @@ const Page: NextPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <Form
-        entry="signin"
-        onClick={onClick}
-        email={email}
-        setEmail={setEmail}
-        pswd={pswd}
-        setPswd={setPswd}
-      />
-    </div>
+    <Form
+      entry="signin"
+      onClick={onClick}
+      email={email}
+      setEmail={setEmail}
+      pswd={pswd}
+      setPswd={setPswd}
+    />
   );
 };
 
