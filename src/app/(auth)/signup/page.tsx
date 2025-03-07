@@ -8,11 +8,7 @@ const Page: NextPage = () => {
   const router = useRouter();
   const onClick = () => router.push("/dashboard");
 
-  return (
-    <div className="flex items-center justify-center h-screen">
-      <Form entry="signup" onClick={onClick} />
-    </div>
-  );
+  return <Form entry="signup" onClick={onClick} />;
 };
 
 export default Page;
