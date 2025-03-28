@@ -5,6 +5,7 @@ import type { NextPage } from "next";
 import { useRouter } from "next/navigation";
 import { Form } from "@/components";
 import { validateLoginUser } from "@/utils/validateLoginUser";
+import Link from "next/link";
 
 const Page: NextPage = () => {
   const [email, setEmail] = useState("");
@@ -25,14 +26,19 @@ const Page: NextPage = () => {
   };
 
   return (
-    <Form
-      entry="signin"
-      onClick={onClick}
-      email={email}
-      setEmail={setEmail}
-      pswd={pswd}
-      setPswd={setPswd}
-    />
+    <div className="flex flex-col items-center justify-center h-screen gap-2">
+      <Form
+        entry="signin"
+        onClick={onClick}
+        email={email}
+        setEmail={setEmail}
+        pswd={pswd}
+        setPswd={setPswd}
+      />
+      <Link href="/signup" className="text-lime-400 hover:text-lime-300">
+        Sign Up
+      </Link>
+    </div>
   );
 };
 

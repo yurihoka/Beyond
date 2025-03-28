@@ -24,9 +24,6 @@ const Page: NextPage = () => {
     }
   };
 
-<<<<<<< HEAD:src/app/(auth)/signup/page.tsx
-  return <Form entry="signup" onClick={onClick} />;
-=======
   return (
     <div className="flex items-center justify-center h-screen">
       <Form
@@ -39,7 +36,6 @@ const Page: NextPage = () => {
       />
     </div>
   );
->>>>>>> main:src/app/signup/page.tsx
 };
 
 export default Page;
