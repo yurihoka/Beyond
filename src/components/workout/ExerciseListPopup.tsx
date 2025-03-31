@@ -40,12 +40,20 @@ const ExerciseListPopUp = (props: PopUpProps) => {
             </li>
           ))}
         </ul>
-        <Button
-          entry={"closeexerciselist"}
-          onClick={() => {
-            props.onOk();
-          }}
-        />
+        <div className="flex justify-between w-full">
+          <Button
+            entry={"closeexerciselist"}
+            onClick={() => {
+              props.onOk();
+            }}
+          />
+          <button
+            className="py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-lime-400 mt-2 hover:bg-lime-300 focus:outline-none"
+            type="button"
+          >
+            ADD
+          </button>
+        </div>
       </div>
       <div
         className="fixed bg-black bg-opacity-50 w-full h-full z-10"
