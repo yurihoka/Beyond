@@ -30,7 +30,7 @@ const Page: NextPage = () => {
         />
       )}
       <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
-        <div className="flex pt-10 justify-between justify-center items-center">
+        <div className="flex pt-10 justify-between items-center">
           <h1>{currentDate}</h1>
           <Button entry="finishworkout" />
         </div>
