@@ -1,22 +1,31 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { Button } from "@/components";
 import { redirect } from "next/navigation";
 import { log } from "console";
 
 // ダミーデータ
-const exerciseNames = ["Squat", "Bench Press", "Chest Press", "Deadlift"];
+const exerciseList = ["Squat", "Bench Press", "Chest Press", "Deadlift"];
 
 export type PopUpProps = {
-  onCancel: () => void;
-  onOk: () => void;
+  setExercises: React.Dispatch<React.SetStateAction<string[]>>;
+  onCancelClick: () => void;
+  onAddClick: () => void;
 };
 
-const ExerciseListPopUp = (props: PopUpProps) => {
+const ExerciseListPopUp = ({
+  setExercises,
+  onCancelClick,
+  onAddClick,
+}: PopUpProps) => {
+  const [checkedExercises, setCheckedExercises] = useState<string[]>([]);
+
   return (
     <>
       <div className="top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-48 p-5 flex flex-col items-start absolute z-20">
         <ul className="w-full max-w-xl mt-auto flex flex-col">
-          {exerciseNames.map((exerciseName, index) => (
+          {exerciseList.map((exercise, index) => (
             <li
               key={index}
               className="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-medium bg-white border text-gray-800 -mt-px first:mt-0"
@@ -28,13 +37,30 @@ const ExerciseListPopUp = (props: PopUpProps) => {
                     name={`hs-list-group-item-checkbox-${index}`}
                     type="checkbox"
                     className="border-gray-200 disabled:opacity-50"
+                    onChange={(e) => {
+                      const isChecked = e.target.checked;
+
+                      if (isChecked) {
+                        if (checkedExercises.includes(exercise)) {
+                          return;
+                        }
+                        setCheckedExercises([...checkedExercises, exercise]);
+                      }
+                      if (checkedExercises.includes(exercise)) {
+                        setCheckedExercises(
+                          checkedExercises.filter(
+                            (checked) => checked !== exercise
+                          )
+                        );
+                      }
+                    }}
                   ></input>
                 </div>
                 <label
                   htmlFor={`hs-list-group-item-checkbox-${index}`}
                   className="ms-3.5 block w-full text-sm text-gray-600"
                 >
-                  {exerciseName}
+                  {exercise}
                 </label>
               </div>
             </li>
@@ -44,12 +70,20 @@ const ExerciseListPopUp = (props: PopUpProps) => {
           <Button
             entry={"closeexerciselist"}
             onClick={() => {
-              props.onOk();
+              onAddClick();
             }}
           />
           <button
             className="py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-lime-400 mt-2 hover:bg-lime-300 focus:outline-none"
             type="button"
+            onClick={() => {
+              setExercises((prev) => {
+                const newExercises = checkedExercises.filter(
+                  (checked) => !prev.includes(checked)
+                );
+                return [...prev, ...newExercises];
+              });
+            }}
           >
             ADD
           </button>
@@ -57,7 +91,7 @@ const ExerciseListPopUp = (props: PopUpProps) => {
       </div>
       <div
         className="fixed bg-black bg-opacity-50 w-full h-full z-10"
-        onClick={() => props.onCancel()}
+        onClick={() => onCancelClick()}
       ></div>
     </>
   );

@@ -21,8 +21,9 @@ const Page: NextPage = () => {
     <>
       {isPopupOpen && (
         <ExerciseListPopUp
-          onCancel={() => setIsPopupOpen(false)}
-          onOk={() => setIsPopupOpen(false)}
+          setExercises={setExercises}
+          onCancelClick={() => setIsPopupOpen(false)}
+          onAddClick={() => setIsPopupOpen(false)}
         />
       )}
       <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
