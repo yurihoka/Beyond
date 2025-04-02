@@ -2,12 +2,7 @@
 
 import type { NextPage } from "next";
 import React, { useEffect, useState } from "react";
-import {
-  Button,
-  Exercise,
-  ExerciseListPopUp,
-  NoAuthUserRedirection,
-} from "@/components";
+import { Button, Exercise, ExerciseListPopUp } from "@/components";
 import { useRouter } from "next/navigation";
 
 const Page: NextPage = () => {
