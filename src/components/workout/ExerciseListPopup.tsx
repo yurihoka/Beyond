@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components";
-import { redirect } from "next/navigation";
-import { log } from "console";
 
 // ダミーデータ
 const exerciseList = ["Squat", "Bench Press", "Chest Press", "Deadlift"];
