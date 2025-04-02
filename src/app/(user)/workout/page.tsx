@@ -12,7 +12,8 @@ import { useRouter } from "next/navigation";
 
 const Page: NextPage = () => {
   const [currentDate, setCurrentDate] = useState<string>("");
-  const [isOpen, setIsOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [exercises, setExercises] = useState<string[]>([]);
   const router = useRouter();
   const onClick = () => router.push("/dashboard");
 
@@ -23,10 +24,10 @@ const Page: NextPage = () => {
 
   return (
     <>
-      {isOpen && (
+      {isPopupOpen && (
         <ExerciseListPopUp
-          onCancel={() => setIsOpen(false)}
-          onOk={() => setIsOpen(false)}
+          onCancel={() => setIsPopupOpen(false)}
+          onOk={() => setIsPopupOpen(false)}
         />
       )}
       <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
@@ -34,8 +35,10 @@ const Page: NextPage = () => {
           <h1>{currentDate}</h1>
           <Button entry="finishworkout" />
         </div>
-        <Exercise />
-        <Button entry="addexercises" onClick={() => setIsOpen(true)} />
+        {exercises.map((exercise, index) => (
+          <Exercise key={index} name={exercise} />
+        ))}
+        <Button entry="addexercises" onClick={() => setIsPopupOpen(true)} />
         <Button entry="cancelworkout" onClick={onClick} />
       </div>
     </>
