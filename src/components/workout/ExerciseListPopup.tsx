@@ -1,10 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components";
-
-// ダミーデータ
-const exerciseList = ["Squat", "Bench Press", "Chest Press", "Deadlift"];
 
 export type PopUpProps = {
   setExercises: React.Dispatch<React.SetStateAction<string[]>>;
@@ -18,6 +15,20 @@ const ExerciseListPopUp = ({
   onAddClick,
 }: PopUpProps) => {
   const [checkedExercises, setCheckedExercises] = useState<string[]>([]);
+  const [exerciseList, setExerciseList] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchExercises = async () => {
+      const res = await fetch("http://localhost:3000/api/exercises");
+      const fetched = await res.json();
+      const exercises = fetched.map(
+        (exercise: { name: string }) => exercise.name
+      );
+
+      setExerciseList(exercises);
+    };
+    fetchExercises();
+  }, []);
 
   return (
     <>
