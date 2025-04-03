@@ -8,17 +8,17 @@ const Button = ({ entry, onClick }: ButtonProps) => {
     <div>
       <div className="w-full flex justify-center">
         {entry === "signin" && (
-          <button className={className} onClick={onClick}>
+          <button type="button" className={className} onClick={onClick}>
             SIGN IN
           </button>
         )}
         {entry === "signup" && (
-          <button className={className} onClick={onClick}>
+          <button type="button" className={className} onClick={onClick}>
             SIGN UP
           </button>
         )}
         {entry === "startworkout" && (
-          <button className={className} onClick={onClick}>
+          <button type="button" className={className} onClick={onClick}>
             START WORKOUT
           </button>
         )}
@@ -26,22 +26,26 @@ const Button = ({ entry, onClick }: ButtonProps) => {
           <button className={className}>FINISH WORKOUT</button>
         )}
         {entry === "addset" && (
-          <button className={className} onClick={onClick}>
+          <button type="button" className={className} onClick={onClick}>
             ADD SET
           </button>
         )}
         {entry === "addexercises" && (
-          <button className={className} onClick={onClick}>
+          <button type="button" className={className} onClick={onClick}>
             ADD EXERCISES
           </button>
         )}
         {entry === "cancelworkout" && (
-          <button className={`${className} bg-gray-300`} onClick={onClick}>
+          <button
+            type="button"
+            className={`${className} bg-gray-300`}
+            onClick={onClick}
+          >
             CANCEL WORKOUT
           </button>
         )}
         {entry === "closeexerciselist" && (
-          <button className={className} onClick={onClick}>
+          <button type="button" className={className} onClick={onClick}>
             X
           </button>
         )}
