@@ -13,7 +13,9 @@ const Page: NextPage = () => {
   const router = useRouter();
   const onClick = () => router.push("/dashboard");
   const { register, handleSubmit } = useForm();
-  const onSubmit = () => {};
+  const onSubmit = (data: any) => {
+    const formattedData = formatSubmitData(currentDate, data);
+  };
 
   useEffect(() => {
     const date = new Date();
@@ -48,3 +50,16 @@ const Page: NextPage = () => {
 };
 
 export default Page;
+
+const formatSubmitData = (date: any, data: any) => {
+  const formattedData: any = [{ date: date, data: [] }];
+  const exerciseNames = Object.keys(data);
+
+  exerciseNames.forEach((name: string) => {
+    const sets = data[name];
+
+    formattedData[0].data.push({ name, sets });
+  });
+
+  return formattedData;
+};
