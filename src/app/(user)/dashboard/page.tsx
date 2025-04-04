@@ -19,8 +19,9 @@ const Page: NextPage = () => {
         `http://localhost:3000/api/histories?email=${storedEmail}`
       );
       const data = await res.json();
+      const sessionList = data.map((session: any) => session.data[0]);
 
-      setSessions(data[0].data);
+      setSessions(sessionList);
     };
 
     setEmail(storedEmail ?? "Guest");

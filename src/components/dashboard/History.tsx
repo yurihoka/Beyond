@@ -17,6 +17,7 @@ const History = ({ sessions }: { sessions: Session[] }) => {
 };
 
 const Sessions = ({ sessions }: { sessions: Session[] }) => {
+  console.log(sessions);
   return (
     <ul className=" w-4/5">
       {sessions.map((session, idx) => {
