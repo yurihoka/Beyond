@@ -10,11 +10,16 @@ const Page: NextPage = () => {
   const [currentDate, setCurrentDate] = useState<string>("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [exercises, setExercises] = useState<string[]>([]);
+  const email = localStorage.getItem("email");
   const router = useRouter();
   const onClick = () => router.push("/dashboard");
   const { register, handleSubmit } = useForm();
   const onSubmit = (data: any) => {
     const formattedData = formatSubmitData(currentDate, data);
+    const res = fetch("http://localhost:3000/api/histories", {
+      method: "POST",
+      body: JSON.stringify({ email: email, workoutData: formattedData }),
+    });
   };
 
   useEffect(() => {
