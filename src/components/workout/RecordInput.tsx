@@ -9,7 +9,7 @@ type RecordInputProps = {
 };
 
 const RecordInput = ({ field, name, set, register }: RecordInputProps) => {
-  const registeredName = `${name.replace(" ", "_")}.${set}.${field}`;
+  const registeredName = `${name.replace(" ", "_")}.${set - 1}.${field}`;
 
   return (
     <div>
