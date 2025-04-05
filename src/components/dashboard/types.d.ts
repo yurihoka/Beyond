@@ -1,5 +1,5 @@
 export type Set = {
-  reps: number;
+  rep: number;
   weight: number;
 };
 

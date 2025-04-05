@@ -2,8 +2,15 @@
 
 import React, { useState } from "react";
 import { WorkoutRecord, Button } from "@/components";
+import type { FieldValues, UseFormRegister } from "react-hook-form";
 
-const Exercise = ({ name }: { name: string }) => {
+const Exercise = ({
+  name,
+  register,
+}: {
+  name: string;
+  register: UseFormRegister<FieldValues>;
+}) => {
   const [sets, setSets] = useState([1]);
   const addSet = () => {
     setSets([...sets, sets.length + 1]);
@@ -28,7 +35,12 @@ const Exercise = ({ name }: { name: string }) => {
         </thead>
         <tbody>
           {sets.map((set, index) => (
-            <WorkoutRecord key={index} set={set} />
+            <WorkoutRecord
+              key={index}
+              name={name}
+              set={set}
+              register={register}
+            />
           ))}
         </tbody>
       </table>

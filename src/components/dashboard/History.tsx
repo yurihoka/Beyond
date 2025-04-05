@@ -57,7 +57,7 @@ const Exercise = ({ name, sets }: Exercise) => {
             <li className="flex gap-2" key={idx}>
               <p>{setCount}</p>
               <p>
-                {set.weight}kg x {set.reps}
+                {set.weight}kg x {set.rep}
               </p>
             </li>
           );
