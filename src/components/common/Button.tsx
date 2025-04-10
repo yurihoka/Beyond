@@ -38,7 +38,7 @@ const Button = ({ entry, onClick }: ButtonProps) => {
         {entry === "cancelworkout" && (
           <button
             type="button"
-            className={`${className} bg-gray-300`}
+            className="w-full py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-gray-400 mt-2 hover:bg-gray-300 focus:outline-none"
             onClick={onClick}
           >
             CANCEL WORKOUT
