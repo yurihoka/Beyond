@@ -1,42 +1,25 @@
 import React from "react";
+import type { FieldValues, UseFormRegister } from "react-hook-form";
 
 type InputProps = {
-  variant: "Email" | "Password";
-  value: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  type: "email" | "password";
+  register: UseFormRegister<FieldValues>;
 };
 
-const Input = ({ variant, value, setValue }: InputProps) => {
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-  };
-  let inputTxt;
-
-  switch (variant) {
-    case "Email":
-      inputTxt = "Email";
-      break;
-    case "Password":
-      inputTxt = "Password";
-      break;
-  }
-
+const Input = ({ type, register }: InputProps) => {
   return (
     <div className="max-w-md w-full">
-      <form className="mt-8 space-y-4">
+      <div className="mt-8 space-y-4">
         <div>
-          <label className="text-gray-800 text-sm mb-2 block">{inputTxt}</label>
+          <label className="text-gray-800 text-sm mb-2 block">{type}</label>
           <div className="relative flex items-center">
             <input
-              name={inputTxt}
-              type={inputTxt}
               required
               className="w-full text-gray-800 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
-              placeholder={`Enter your ${inputTxt}`}
-              value={value}
-              onChange={onChange}
+              placeholder={`Enter your ${type}`}
+              {...register(type)}
             />
-            {inputTxt === "Email" ? (
+            {type === "email" ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#bbb"
@@ -50,7 +33,7 @@ const Input = ({ variant, value, setValue }: InputProps) => {
                   data-original="#000000"
                 ></path>
               </svg>
-            ) : inputTxt === "Password" ? (
+            ) : type === "password" ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="#bbb"
@@ -66,7 +49,7 @@ const Input = ({ variant, value, setValue }: InputProps) => {
             ) : null}
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
