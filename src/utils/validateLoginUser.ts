@@ -5,10 +5,10 @@ export const validateLoginUser = async (email: string, password: string) => {
       body: JSON.stringify({ email: email, password: password }),
     });
 
-    const isValidLoginUser = response.status === 200;
+    const isSucceeded = response.status === 200;
     const msg = await response.text();
 
-    return { isValidLoginUser: isValidLoginUser, msg: msg };
+    return { isSucceeded: isSucceeded, msg: msg };
   } catch (err) {
     console.log(err);
   }

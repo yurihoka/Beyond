@@ -1,37 +1,48 @@
+"use client";
+
 import React from "react";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import { Input, Button } from "@/components";
+import { validateLoginUser } from "@/utils/validateLoginUser";
+import { validateSignupUser } from "@/utils/validateSignupUser";
 
 type FormProps = {
-  entry:
-    | "signin"
-    | "signup"
-    | "startworkout"
-    | "finishworkout"
-    | "addset"
-    | "addexercises"
-    | "cancelworkout"
-    | "closeexerciselist";
-  onClick: (e: React.MouseEvent<HTMLInputElement>) => void;
-  email: string;
-  setEmail: React.Dispatch<React.SetStateAction<string>>;
-  pswd: string;
-  setPswd: React.Dispatch<React.SetStateAction<string>>;
+  entry: "signin" | "signup";
 };
 
-const Form = ({
-  entry,
-  onClick,
-  email,
-  setEmail,
-  pswd,
-  setPswd,
-}: FormProps) => {
+const Form = ({ entry }: FormProps) => {
+  const { register, handleSubmit } = useForm();
+  const router = useRouter();
+  const onSubmit = (data: any) => {
+    const { email, password } = data;
+    const authorizeUser = async () => {
+      const res =
+        entry === "signin"
+          ? await validateLoginUser(email, password)
+          : await validateSignupUser(email, password);
+
+      if (res?.isSucceeded) {
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+
+        router.push("/dashboard");
+        return;
+      }
+    };
+
+    authorizeUser();
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center">
-      <Input variant="Email" value={email} setValue={setEmail} />
-      <Input variant="Password" value={pswd} setValue={setPswd} />
-      <Button entry={entry} onClick={onClick} />
-    </div>
+    <form
+      className="flex flex-col items-center justify-center"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <Input type="email" register={register} />
+      <Input type="password" register={register} />
+      <Button entry={entry} />
+    </form>
   );
 };
 

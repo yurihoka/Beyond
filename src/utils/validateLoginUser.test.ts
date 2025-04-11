@@ -5,7 +5,7 @@ describe("Login APIコール用のUtil関数", () => {
     test("＿", async () => {
       const res = await validateLoginUser("newuser@xyz.com", "newuser");
 
-      expect(res?.isValidLoginUser).toBeTruthy();
+      expect(res?.isSucceeded).toBeTruthy();
     });
   });
 
@@ -16,13 +16,13 @@ describe("Login APIコール用のUtil関数", () => {
         "noexistentuser"
       );
 
-      expect(res?.isValidLoginUser).toBeFalsy();
+      expect(res?.isSucceeded).toBeFalsy();
       expect(res?.msg).toEqual("存在しないユーザーです");
     });
     test("パスワード間違い", async () => {
       const res = await validateLoginUser("test@xyz.com", "wrongpassword");
 
-      expect(res?.isValidLoginUser).toBeFalsy();
+      expect(res?.isSucceeded).toBeFalsy();
       expect(res?.msg).toEqual("パスワードが間違っています");
     });
   });
