@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import { Exercise } from "@/components";
 
 const meta: Meta<typeof Exercise> = {
-  title: "Workout/Exercise",
+  title: "Components/Workout/Exercise",
   component: Exercise,
   tags: ["autodocs"],
   parameters: {

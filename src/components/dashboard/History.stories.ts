@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import { History } from "@/components";
 
 const meta: Meta<typeof History> = {
-  title: "Dashboard/History",
+  title: "Components/Dashboard/History",
   component: History,
   tags: ["autodocs"],
   parameters: {

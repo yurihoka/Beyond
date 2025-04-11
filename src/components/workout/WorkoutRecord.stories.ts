@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import { WorkoutRecord } from "@/components";
 
 const meta: Meta<typeof WorkoutRecord> = {
-  title: "Workout/WorkoutRecord",
+  title: "Components/Workout/WorkoutRecord",
   component: WorkoutRecord,
   tags: ["autodocs"],
   parameters: {

@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import ExerciseListPopUp from "./ExerciseListPopup";
 
 const meta: Meta<typeof ExerciseListPopUp> = {
-  title: "Workout/ExerciseListPopUp",
+  title: "Components/Workout/ExerciseListPopUp",
   component: ExerciseListPopUp,
   tags: ["autodocs"],
   parameters: {

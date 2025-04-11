@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import { SignoutButton } from "@/components";
 
 const meta: Meta<typeof SignoutButton> = {
-  title: "Common/SignoutButton",
+  title: "Components/Common/SignoutButton",
   component: SignoutButton,
   tags: ["autodocs"],
   parameters: {
