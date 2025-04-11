@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import { Form } from "@/components";
 
 const meta: Meta<typeof Form> = {
-  title: "Common/Form",
+  title: "Components/Common/Form",
   component: Form,
   tags: ["autodocs"],
   parameters: {

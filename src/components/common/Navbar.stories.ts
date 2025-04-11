@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import { Navbar } from "@/components";
 
 const meta: Meta<typeof Navbar> = {
-  title: "Common/Navbar",
+  title: "Components/Common/Navbar",
   component: Navbar,
   tags: ["autodocs"],
   parameters: {
