@@ -7,6 +7,24 @@ type InputProps = {
 };
 
 const Input = ({ type, register }: InputProps) => {
+  const rgstr =
+    type === "email"
+      ? register("email", {
+          required: true,
+          pattern: {
+            value: /[A-Za-z0-9\._\-]+@[A-Za-z0-9\._\-]+\.[A-Za-z]+/,
+            message:
+              "英数字または記号(.-_)を含むメールアドレスを入力してください",
+          },
+        })
+      : register("password", {
+          required: true,
+          pattern: {
+            value: /[A-Za-z0-9]+/,
+            message: "英数字を含むパスワードを入力してください",
+          },
+        });
+
   return (
     <div className="max-w-md w-full">
       <div className="mt-8 space-y-4">
@@ -17,7 +35,7 @@ const Input = ({ type, register }: InputProps) => {
               required
               className="w-full text-gray-800 text-sm border border-gray-300 px-4 py-3 rounded-md outline-blue-600"
               placeholder={`Enter your ${type}`}
-              {...register(type)}
+              {...rgstr}
             />
             {type === "email" ? (
               <svg
