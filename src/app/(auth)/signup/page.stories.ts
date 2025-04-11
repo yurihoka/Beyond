@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import Page from "./page";
 
 const meta: Meta<typeof Page> = {
-  title: "Signup/Page",
+  title: "Pages/Auth/Signup",
   component: Page,
   tags: ["autodocs"],
   parameters: {
@@ -19,4 +19,4 @@ const meta: Meta<typeof Page> = {
 
 export default meta;
 
-export const Signup = {};
+export const Default = {};

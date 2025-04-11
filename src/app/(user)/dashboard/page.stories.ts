@@ -2,7 +2,7 @@ import { Meta } from "@storybook/react";
 import Page from "./page";
 
 const meta: Meta<typeof Page> = {
-  title: "Dashboard/Page",
+  title: "Pages/User/Dashboard",
   component: Page,
   tags: ["autodocs"],
   parameters: {
