@@ -4,10 +4,10 @@ export const validateSignupUser = async (email: string, password: string) => {
       method: "POST",
       body: JSON.stringify({ email: email, password: password }),
     });
-    const isSignedUp = response.status === 200;
+    const isSucceeded = response.status === 200;
     const msg = await response.text();
 
-    return { isSignedUp: isSignedUp, msg: msg };
+    return { isSucceeded: isSucceeded, msg: msg };
   } catch (err) {
     console.log(err);
   }

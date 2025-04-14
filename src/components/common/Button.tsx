@@ -7,16 +7,8 @@ const Button = ({ entry, onClick }: ButtonProps) => {
   return (
     <div>
       <div className="w-full flex justify-center">
-        {entry === "signin" && (
-          <button type="button" className={className} onClick={onClick}>
-            SIGN IN
-          </button>
-        )}
-        {entry === "signup" && (
-          <button type="button" className={className} onClick={onClick}>
-            SIGN UP
-          </button>
-        )}
+        {entry === "signin" && <button className={className}>SIGN IN</button>}
+        {entry === "signup" && <button className={className}>SIGN UP</button>}
         {entry === "startworkout" && (
           <button type="button" className={className} onClick={onClick}>
             START WORKOUT
