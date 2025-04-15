@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { NextPage } from "next";
-import { Button, Navbar, History, NoAuthUserRedirection } from "@/components";
+import { Button, Navbar, History } from "@/components";
 import { useRouter } from "next/navigation";
 
 const Page: NextPage = () => {

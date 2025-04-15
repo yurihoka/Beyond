@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import { Button, Exercise, ExerciseListPopUp } from "@/components";
 import { useRouter } from "next/navigation";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const Page: NextPage = () => {
   const [currentDate, setCurrentDate] = useState<string>("");
