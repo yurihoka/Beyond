@@ -1,6 +1,6 @@
 export const validateLoginUser = async (email: string, password: string) => {
   try {
-    const response = await fetch("http://localhost:3000/api/login", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
       method: "POST",
       body: JSON.stringify({ email: email, password: password }),
     });

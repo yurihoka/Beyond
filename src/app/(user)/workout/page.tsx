@@ -16,7 +16,7 @@ const Page: NextPage = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data: any) => {
     const formattedData = formatSubmitData(currentDate, data);
-    const res = fetch("http://localhost:3000/api/histories", {
+    const res = fetch(`${process.env.NEXT_PUBLIC_HOST}/api/histories`, {
       method: "POST",
       body: JSON.stringify({ email: email, workoutData: formattedData }),
     });

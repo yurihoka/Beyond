@@ -16,7 +16,7 @@ const Page: NextPage = () => {
     const storedEmail = localStorage.getItem("email");
     const updateUserHistory = async () => {
       const res = await fetch(
-        `http://localhost:3000/api/histories?email=${storedEmail}`
+        `${process.env.NEXT_PUBLIC_HOST}/api/histories?email=${storedEmail}`
       );
       const data = await res.json();
       const sessionList = data.map((session: any) => session.data[0]);
