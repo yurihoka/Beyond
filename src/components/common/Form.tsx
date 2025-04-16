@@ -34,6 +34,7 @@ const Form = ({ entry }: FormProps) => {
         router.push("/dashboard");
         return;
       }
+      setErrorMessage(res?.msg as string);
     };
 
     authorizeUser();
