@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { Input, Button } from "@/components";
@@ -12,7 +12,12 @@ type FormProps = {
 };
 
 const Form = ({ entry }: FormProps) => {
-  const { register, handleSubmit } = useForm();
+  const [errorMessage, setErrorMessage] = React.useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const router = useRouter();
   const onSubmit = (data: any) => {
     const { email, password } = data;
@@ -29,10 +34,17 @@ const Form = ({ entry }: FormProps) => {
         router.push("/dashboard");
         return;
       }
+      setErrorMessage(res?.msg as string);
     };
 
     authorizeUser();
   };
+
+  useEffect(() => {
+    const msg = errors?.email?.message || errors?.password?.message;
+
+    setErrorMessage(msg as string);
+  }, [errors]);
 
   return (
     <form
@@ -41,7 +53,10 @@ const Form = ({ entry }: FormProps) => {
     >
       <Input type="email" register={register} />
       <Input type="password" register={register} />
-      <Button entry={entry} />
+      <div className="flex flex-col items-center justify-center gap-4">
+        <Button entry={entry} />
+        <p className="text-rose-400">{errorMessage}</p>
+      </div>
     </form>
   );
 };
