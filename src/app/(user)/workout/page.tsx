@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import { Button, Exercise, ExerciseListPopUp } from "@/components";
 import { useRouter } from "next/navigation";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const Page: NextPage = () => {
   const [currentDate, setCurrentDate] = useState<string>("");
@@ -16,7 +16,7 @@ const Page: NextPage = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data: any) => {
     const formattedData = formatSubmitData(currentDate, data);
-    const res = fetch("http://localhost:3000/api/histories", {
+    const res = fetch(`${process.env.NEXT_PUBLIC_HOST}/api/histories`, {
       method: "POST",
       body: JSON.stringify({ email: email, workoutData: formattedData }),
     });
