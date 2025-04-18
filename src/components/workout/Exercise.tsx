@@ -7,9 +7,13 @@ import type { FieldValues, UseFormRegister } from "react-hook-form";
 const Exercise = ({
   name,
   register,
+  exercises,
+  setExercises,
 }: {
   name: string;
   register: UseFormRegister<FieldValues>;
+  exercises: string[];
+  setExercises: React.Dispatch<React.SetStateAction<string[]>>;
 }) => {
   const [sets, setSets] = useState([1]);
   const addSet = () => {
@@ -18,7 +22,19 @@ const Exercise = ({
 
   return (
     <div className="relative overflow-x-auto m-6">
-      <h2 className="text-lg">{name}</h2>
+      <div className="flex justify-between">
+        <h2 className="text-lg">{name}</h2>
+        <Button
+          entry="closeexerciselist"
+          onClick={() => {
+            const updatedExercises = exercises.filter(
+              (exercise) => exercise !== name
+            );
+
+            setExercises(updatedExercises);
+          }}
+        />
+      </div>
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
           <tr>
