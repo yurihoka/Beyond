@@ -45,7 +45,13 @@ const Page: NextPage = () => {
           <Button entry="finishworkout" />
         </div>
         {exercises.map((exercise, index) => (
-          <Exercise key={index} name={exercise} register={register} />
+          <Exercise
+            key={index}
+            name={exercise}
+            register={register}
+            exercises={exercises}
+            setExercises={setExercises}
+          />
         ))}
         <Button entry="addexercises" onClick={() => setIsPopupOpen(true)} />
         <Button entry="cancelworkout" onClick={onClick} />
