@@ -1,4 +1,4 @@
-import { GET, POST, PATCH } from "./route";
+import { GET, POST, PATCH, DELETE } from "./route";
 import { createMocks } from "node-mocks-http";
 import { type NextRequest } from "next/server";
 
@@ -83,6 +83,21 @@ describe("API: histories", () => {
         },
       });
       const response = await PATCH(req);
+
+      expect(response.status).toBe(200);
+    });
+  });
+
+  describe("DELETE", () => {
+    test("トレーニング記録削除", async () => {
+      const { req }: { req: Request } = createMocks({
+        method: "DELETE",
+        body: {
+          email: "test@xyz.com",
+          date: "2024-04-04",
+        },
+      });
+      const response = await DELETE(req);
 
       expect(response.status).toBe(200);
     });
