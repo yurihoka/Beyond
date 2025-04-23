@@ -7,7 +7,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const [email, setEmail] = useState<string>("");
 
   useEffect(() => {
-    setEmail(localStorage.getItem("email") as string);
+    if (typeof window !== "undefined") {
+      setEmail(localStorage.getItem("email") as string);
+    }
   }, []);
 
   return (
