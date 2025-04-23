@@ -24,9 +24,11 @@ const Page: NextPage = () => {
   };
 
   useEffect(() => {
-    const date = new Date();
-    setCurrentDate(date.toLocaleDateString());
-    setEmail(window.localStorage.getItem("email") as string);
+    if (typeof window !== "undefined") {
+      const date = new Date();
+      setCurrentDate(date.toLocaleDateString());
+      setEmail(window.localStorage.getItem("email") || "");
+    }
   }, []);
 
   return (
