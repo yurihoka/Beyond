@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { Button, Exercise, ExerciseListPopUp, History } from "@/components";
-import { formatSubmitData } from "../page";
+import { formatSubmitData } from "../formatSubmitData";
 
 type WorkoutSet = { rep: number; weight: number };
 type workoutHistory = {
