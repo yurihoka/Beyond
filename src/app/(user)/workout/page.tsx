@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Exercise, ExerciseListPopUp } from "@/components";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { formatSubmitData } from "./formatSubmitData";
 
 const Page: NextPage = () => {
   const [currentDate, setCurrentDate] = useState<string>("");
@@ -61,16 +62,3 @@ const Page: NextPage = () => {
 };
 
 export default Page;
-
-export const formatSubmitData = (date: any, data: any) => {
-  const formattedData: any = [{ date: date, data: [] }];
-  const exerciseNames = Object.keys(data);
-
-  exerciseNames.forEach((name: string) => {
-    const sets = data[name];
-
-    formattedData[0].data.push({ name, sets });
-  });
-
-  return formattedData;
-};
