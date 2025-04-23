@@ -34,7 +34,10 @@ const Page: NextPage = () => {
         <Navbar userEmail={email} />
       </div>
       <div className="flex flex-col items-center justify-center pt-16">
-        <Button entry="startworkout" onClick={onClick} />
+        <div className="flex gap-4">
+          <Button entry="startworkout" onClick={onClick} />
+          <Button entry="edit" onClick={() => router.push("/workout/edit")} />
+        </div>
         <div className="w-full min-h-64 flex justify-center items-center">
           <History sessions={sessions} />
         </div>
