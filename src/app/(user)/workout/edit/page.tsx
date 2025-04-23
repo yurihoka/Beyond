@@ -25,14 +25,17 @@ const Page: NextPage = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const [exercises, setExercises] = useState<string[]>([]);
-  const email = localStorage?.getItem("email");
+  const [email, setEmail] = useState<string>("");
   const router = useRouter();
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data: any) => {
     const formattedData = formatSubmitData(selectedDate, data);
     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/histories`, {
       method: "PATCH",
-      body: JSON.stringify({ email: email, workoutData: formattedData }),
+      body: JSON.stringify({
+        email: email,
+        workoutData: formattedData,
+      }),
     });
 
     if (res.ok) router.push("/dashboard");
@@ -64,6 +67,7 @@ const Page: NextPage = () => {
       const histories = data.map((history: workoutHistory) => history.data[0]);
 
       setWorkoutHistories(histories);
+      setEmail(localStorage?.getItem("email") as string);
     };
 
     fetchWorkoutHistories();
