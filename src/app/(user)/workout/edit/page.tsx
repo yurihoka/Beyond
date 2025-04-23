@@ -59,15 +59,19 @@ const Page: NextPage = () => {
   useEffect(() => {
     const fetchWorkoutHistories = async () => {
       const res = await fetch(
-        `${
-          process.env.NEXT_PUBLIC_HOST
-        }/api/histories?email=${window.localStorage.getItem("email")}`
+        `${process.env.NEXT_PUBLIC_HOST}/api/histories?email=${
+          typeof window !== "undefined"
+            ? window.localStorage.getItem("email")
+            : ""
+        }`
       );
       const data = await res.json();
       const histories = data.map((history: workoutHistory) => history.data[0]);
 
       setWorkoutHistories(histories);
-      setEmail(window.localStorage.getItem("email") as string);
+      if (typeof window !== "undefined") {
+        setEmail(window.localStorage.getItem("email") as string);
+      }
     };
 
     fetchWorkoutHistories();
