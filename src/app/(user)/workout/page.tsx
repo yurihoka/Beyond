@@ -11,7 +11,7 @@ const Page: NextPage = () => {
   const [currentDate, setCurrentDate] = useState<string>("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [exercises, setExercises] = useState<string[]>([]);
-  const email = localStorage.getItem("email");
+  const email = localStorage?.getItem("email");
   const router = useRouter();
   const onClick = () => router.push("/dashboard");
   const { register, handleSubmit } = useForm();

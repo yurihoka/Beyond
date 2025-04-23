@@ -25,7 +25,7 @@ const Page: NextPage = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const [exercises, setExercises] = useState<string[]>([]);
-  const email = localStorage.getItem("email");
+  const email = localStorage?.getItem("email");
   const router = useRouter();
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data: any) => {
@@ -58,7 +58,7 @@ const Page: NextPage = () => {
       const res = await fetch(
         `${
           process.env.NEXT_PUBLIC_HOST
-        }/api/histories?email=${localStorage.getItem("email")}`
+        }/api/histories?email=${localStorage?.getItem("email")}`
       );
       const data = await res.json();
       const histories = data.map((history: workoutHistory) => history.data[0]);
