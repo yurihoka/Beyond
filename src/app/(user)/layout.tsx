@@ -1,8 +1,19 @@
 "use client";
 
-import { NoAuthUserRedirection } from "@/components";
+import { Navbar, NoAuthUserRedirection } from "@/components";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  return <NoAuthUserRedirection>{children}</NoAuthUserRedirection>;
+  const email = localStorage.getItem("email");
+
+  return (
+    <NoAuthUserRedirection>
+      <div className="relative">
+        <div className="fixed top-0 left-0 w-full">
+          <Navbar userEmail={email as string} />
+        </div>
+        <div className="mt-10">{children}</div>
+      </div>
+    </NoAuthUserRedirection>
+  );
 };
 export default Layout;
