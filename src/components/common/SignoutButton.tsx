@@ -4,8 +4,10 @@ const SignoutButton = () => {
   const router = useRouter();
 
   const onClick = () => {
-    localStorage.clear();
-    router.push("/signin");
+    if (typeof window === "undefined") {
+      localStorage.clear();
+      router.push("/signin");
+    }
   };
 
   return (
