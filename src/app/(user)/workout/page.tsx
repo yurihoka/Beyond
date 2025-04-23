@@ -11,7 +11,7 @@ const Page: NextPage = () => {
   const [currentDate, setCurrentDate] = useState<string>("");
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [exercises, setExercises] = useState<string[]>([]);
-  const email = localStorage?.getItem("email");
+  const [email, setEmail] = useState<string>("");
   const router = useRouter();
   const onClick = () => router.push("/dashboard");
   const { register, handleSubmit } = useForm();
@@ -26,6 +26,7 @@ const Page: NextPage = () => {
   useEffect(() => {
     const date = new Date();
     setCurrentDate(date.toLocaleDateString());
+    setEmail(window.localStorage.getItem("email") as string);
   }, []);
 
   return (

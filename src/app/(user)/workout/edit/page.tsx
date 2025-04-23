@@ -61,13 +61,13 @@ const Page: NextPage = () => {
       const res = await fetch(
         `${
           process.env.NEXT_PUBLIC_HOST
-        }/api/histories?email=${localStorage?.getItem("email")}`
+        }/api/histories?email=${window.localStorage.getItem("email")}`
       );
       const data = await res.json();
       const histories = data.map((history: workoutHistory) => history.data[0]);
 
       setWorkoutHistories(histories);
-      setEmail(localStorage?.getItem("email") as string);
+      setEmail(window.localStorage.getItem("email") as string);
     };
 
     fetchWorkoutHistories();
