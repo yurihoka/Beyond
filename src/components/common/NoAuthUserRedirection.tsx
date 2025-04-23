@@ -3,7 +3,8 @@ import { useRouter } from "next/navigation";
 
 const NoAuthUserRedirection = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
-  const email = window !== undefined ? localStorage.getItem("email") : null;
+  const email =
+    typeof window !== undefined ? localStorage.getItem("email") : null;
   const isAuthed = email !== null && email !== "";
 
   if (isAuthed) {
