@@ -27,7 +27,7 @@ const Page: NextPage = () => {
     if (typeof window !== "undefined") {
       const date = new Date();
       setCurrentDate(date.toLocaleDateString());
-      setEmail(window.localStorage.getItem("email") || "");
+      setEmail(window.localStorage?.getItem("email") || "");
     }
   }, []);
 

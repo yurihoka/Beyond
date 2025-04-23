@@ -61,7 +61,7 @@ const Page: NextPage = () => {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_HOST}/api/histories?email=${
           typeof window !== "undefined"
-            ? window.localStorage.getItem("email")
+            ? window.localStorage?.getItem("email")
             : ""
         }`
       );
@@ -70,7 +70,7 @@ const Page: NextPage = () => {
 
       setWorkoutHistories(histories);
       if (typeof window !== "undefined") {
-        setEmail(window.localStorage.getItem("email") as string);
+        setEmail(window.localStorage?.getItem("email") as string);
       }
     };
 
