@@ -62,7 +62,7 @@ const Page: NextPage = () => {
 
 export default Page;
 
-const formatSubmitData = (date: any, data: any) => {
+export const formatSubmitData = (date: any, data: any) => {
   const formattedData: any = [{ date: date, data: [] }];
   const exerciseNames = Object.keys(data);
 

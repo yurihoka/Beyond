@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { SignoutButton } from "@/components";
 
 export type NavbarProps = {
@@ -10,9 +11,9 @@ const Navbar = ({ userEmail }: NavbarProps) => {
     <div>
       <ul className="flex justify-between items-center bg-gray-200 px-10">
         <li className="mr-3">
-          <a className="text-gray-500 hover:text-gray-700" href="#">
+          <Link className="text-gray-500 hover:text-gray-700" href="/dashboard">
             HOME
-          </a>
+          </Link>
         </li>
         <li className="mr-3 flex items-center gap-4">
           <SignoutButton />

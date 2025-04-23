@@ -41,6 +41,20 @@ const Button = ({ entry, onClick }: ButtonProps) => {
             X
           </button>
         )}
+        {entry === "edit" && (
+          <button type="button" className={className} onClick={onClick}>
+            EDIT
+          </button>
+        )}
+        {entry === "delete" && (
+          <button
+            type="button"
+            className="w-full py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-rose-400 mt-2 hover:bg-rose-300 focus:outline-none"
+            onClick={onClick}
+          >
+            DELETE
+          </button>
+        )}
       </div>
     </div>
   );
