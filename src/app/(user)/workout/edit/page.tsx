@@ -37,6 +37,21 @@ const Page: NextPage = () => {
 
     if (res.ok) router.push("/dashboard");
   };
+  const onDeleteClick = async () => {
+    const isConfirmed = window.confirm("本当に削除しますか？");
+
+    if (!isConfirmed) return;
+
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/histories`, {
+      method: "DELETE",
+      body: JSON.stringify({
+        email: email,
+        date: selectedDate,
+      }),
+    });
+
+    if (res.ok) router.push("/dashboard");
+  };
 
   useEffect(() => {
     const fetchWorkoutHistories = async () => {
@@ -85,12 +100,15 @@ const Page: NextPage = () => {
           onAddClick={() => setIsPopupOpen(false)}
         />
       )}
-      <Button
-        entry="edit"
-        onClick={() => {
-          setIsEditMode((prev) => !prev);
-        }}
-      />
+      <div className="flex gap-4">
+        <Button
+          entry="edit"
+          onClick={() => {
+            setIsEditMode((prev) => !prev);
+          }}
+        />
+        <Button entry="delete" onClick={onDeleteClick} />
+      </div>
       {isEditMode && (
         <form
           className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
