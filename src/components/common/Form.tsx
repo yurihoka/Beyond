@@ -28,13 +28,11 @@ const Form = ({ entry }: FormProps) => {
           : await validateSignupUser(email, password);
 
       if (res?.isSucceeded) {
-        if (typeof window !== "undefined") {
-          localStorage.setItem("email", email);
-          localStorage.setItem("password", password);
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
 
-          router.push("/dashboard");
-          return;
-        }
+        router.push("/dashboard");
+        return;
       }
       setErrorMessage(res?.msg as string);
     };
