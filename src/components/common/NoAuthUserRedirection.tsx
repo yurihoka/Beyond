@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 
 const NoAuthUserRedirection = ({ children }: { children: ReactNode }) => {
   const [email, setEmail] = useState("");
-  const isAuthed = email !== null && email !== "";
+  const [isAuthed, setIsAuthed] = useState(false);
+  const [isInvalidAccess, setIsInvalidAccess] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -13,13 +14,14 @@ const NoAuthUserRedirection = ({ children }: { children: ReactNode }) => {
 
     setEmail(storedEmail || "");
   }, []);
+  useEffect(() => {
+    setIsAuthed(email !== null && email !== "");
+    setIsInvalidAccess(email === null || email === "");
+  }, [email]);
 
-  if (isAuthed) {
-    return <>{children}</>;
-  }
+  if (isInvalidAccess) router.push("/signin");
 
-  router.push("/signin");
-  return;
+  return isAuthed ? <>{children}</> : <></>;
 };
 
 export default NoAuthUserRedirection;
