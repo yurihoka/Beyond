@@ -19,7 +19,7 @@ const ExerciseListPopUp = ({
 
   useEffect(() => {
     const fetchExercises = async () => {
-      const res = await fetch("http://localhost:3000/api/exercises");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/exercises`);
       const fetched = await res.json();
       const exercises = fetched.map(
         (exercise: { name: string }) => exercise.name
