@@ -13,7 +13,7 @@ const Page: NextPage = () => {
   const onClick = () => router.push("/workout");
 
   useEffect(() => {
-    const storedEmail = localStorage.getItem("email");
+    const storedEmail = localStorage?.getItem("email");
     const updateUserHistory = async () => {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_HOST}/api/histories?email=${storedEmail}`

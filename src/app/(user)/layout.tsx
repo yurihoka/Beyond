@@ -1,9 +1,14 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Navbar, NoAuthUserRedirection } from "@/components";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const email = localStorage.getItem("email");
+  const [email, setEmail] = useState<string>("");
+
+  useEffect(() => {
+    setEmail(localStorage?.getItem("email") ?? "");
+  }, []);
 
   return (
     <NoAuthUserRedirection>

@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { type NextApiRequest } from "next";
+import { NextRequest } from "next/server";
 
 export async function GET() {
   try {
@@ -17,8 +17,10 @@ export async function GET() {
     return new Response("サーバーエラーが発生しました", { status: 500 });
   }
 }
-export async function POST(req: NextApiRequest) {
-  const newExercise = req.body;
+export async function POST(req: NextRequest) {
+  const newExercise = await req.json();
+
+  console.log(newExercise);
 
   try {
     const client = createClient(
@@ -41,7 +43,9 @@ export async function POST(req: NextApiRequest) {
   }
 }
 
-export async function PATCH(req: NextApiRequest) {
+export async function PATCH(req: NextRequest) {
+  const { name, id } = await req.json();
+
   try {
     const client = createClient(
       process.env.SUPABASE_URL as string,
@@ -49,8 +53,8 @@ export async function PATCH(req: NextApiRequest) {
     );
     const { data, error } = await client
       .from("exercises")
-      .update({ name: req.body.name })
-      .eq("id", req.body.id)
+      .update({ name: name })
+      .eq("id", id)
       .select();
 
     if (error?.code === "23505")
@@ -70,9 +74,11 @@ export async function PATCH(req: NextApiRequest) {
   }
 }
 
-export async function DELETE(req: NextApiRequest) {
+export async function DELETE(req: NextRequest) {
+  const body = await req.json();
+
   try {
-    const id = req.body.id;
+    const id = body.id;
     const client = createClient(
       process.env.SUPABASE_URL as string,
       process.env.SUPABASE_ANON_KEY as string

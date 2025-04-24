@@ -1,17 +1,27 @@
-import { ReactNode } from "react";
+"use client";
+
+import { ReactNode, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const NoAuthUserRedirection = ({ children }: { children: ReactNode }) => {
+  const [email, setEmail] = useState<string | null>(null);
+  const [isAuthed, setIsAuthed] = useState(false);
+  // const [isInvalidAccess, setIsInvalidAccess] = useState(false);
   const router = useRouter();
-  const email = localStorage.getItem("email");
-  const isAuthed = email !== null && email !== "";
 
-  if (isAuthed) {
-    return <>{children}</>;
-  }
+  useEffect(() => {
+    const storedEmail = localStorage.getItem("email");
 
-  router.push("/signin");
-  return;
+    setEmail(storedEmail || "");
+  }, []);
+  useEffect(() => {
+    setIsAuthed(email !== null && email !== "");
+    // setIsInvalidAccess(email === null || email === "");
+  }, [email]);
+
+  // if (isInvalidAccess) router.push("/signin");
+
+  return isAuthed ? <>{children}</> : <></>;
 };
 
 export default NoAuthUserRedirection;

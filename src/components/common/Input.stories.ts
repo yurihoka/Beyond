@@ -13,7 +13,7 @@ const meta: Meta<typeof Input> = {
     },
   },
   argTypes: {
-    variant: {
+    type: {
       description: "インプットしてほしい内容を表示するテキスト",
     },
   },
@@ -23,12 +23,12 @@ export default meta;
 
 export const Email = {
   args: {
-    variant: "Email",
+    type: "Email",
   },
 };
 
 export const Password = {
   args: {
-    variant: "Password",
+    type: "Password",
   },
 };
