@@ -1,4 +1,4 @@
-<img src="/public/project-thumbnail.png">
+<img src="public/project-thumbnail.png">
 
 # Beyond
 
